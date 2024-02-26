@@ -1,0 +1,3 @@
+C:/Users/joedu/CLionProjects/Calculadora_FunTras/cmake-build-debug/CMakeFiles/Calculadora_FunTras.dir
+C:/Users/joedu/CLionProjects/Calculadora_FunTras/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joedu/CLionProjects/Calculadora_FunTras/cmake-build-debug/CMakeFiles/rebuild_cache.dir
