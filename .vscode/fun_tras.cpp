@@ -57,7 +57,24 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
         return 0;
     }
 
-    
+    cpp_dec_float_50 xk;
+    cpp_dec_float_50 xk_anterior=0;
+
+    for(int i =1;i<max_interacion;i++){
+      if(i==1){
+          xk_anterior=x0;
+      }
+
+      xk=xk_anterior*(2-a*xk_anterior);
+
+      if(abs(xk-xk_anterior)<abs(tolerancia)){
+          break;
+      }
+      
+      xk_anterior=xk;
+
+    }
+    return xk;
 }
 
 
