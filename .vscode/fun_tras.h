@@ -15,6 +15,7 @@ using namespace boost::multiprecision;
 using namespace std;
 
 
+
 class fun_tras {
 public:
     fun_tras(); //constructor de la clase
@@ -26,16 +27,15 @@ private:
 
     // VARIABLES
     cpp_dec_float_50 pi_t = 3.14159265358979323846; // valor de pi
-    cpp_dec_float_50 eps = 2.2204e-16; //valor de la constante eps
+    static cpp_dec_float_50 eps;  //valor de la constante eps
+    static cpp_dec_float_50 tolerancia; // valor de la tolerancia
+    static int max_interacion; // numero maximo de iteraciones
     // definen los diferentes factoriales para utilizarlos como constantes
     static cpp_int fact_20;
     static cpp_int fact_40;
     static cpp_int fact_60;
     static cpp_int fact_80;
     static cpp_int fact_100;
-
-    //FUNCIONES
-    static void fact_list(); // funcion necesaria para calcular los factoriales constantes
 };
 
 
