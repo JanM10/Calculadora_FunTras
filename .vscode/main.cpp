@@ -12,5 +12,5 @@ int main(){
     cpp_dec_float_50 pi=funTras.get_pi();
     //std::cout<<funTras.fact_t(20)<<std::endl;
     std::cout<<setprecision(numeric_limits<cpp_dec_float_50>::digits10)
-           << funTras.cos_t(pi/6)<<std::endl;
+           << funTras.ln_t(2)<<std::endl;
 }

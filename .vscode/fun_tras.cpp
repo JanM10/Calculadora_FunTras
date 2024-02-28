@@ -95,7 +95,7 @@ cpp_dec_float_50 fun_tras::sin_t(cpp_dec_float_50 a) {
         total += (i % 2==0 ? 1:-1)*pow(a,2*i+1)* divi_t(denominador);  // NOTA:(i % 2==0 ? 1:-1); consulta si i es par o impar
 
         if (abs(total-sk)<tolerancia){ // condicion de parada
-            return total;
+            break;
         }
 
         sk=total; // guardar el valor de sk para la condicion de parada
@@ -119,12 +119,40 @@ cpp_dec_float_50 fun_tras::cos_t(cpp_dec_float_50 a) {
         total += (i % 2==0 ? 1:-1)*pow(a,2*i)* divi_t(denominador); //polinomio para aproximacion
 
         if (abs(total-sk)<tolerancia){ // condicion de parada
-            return total;
+            break;
         }
 
         sk=total;
     }
     return total;
+
+}
+
+cpp_dec_float_50 fun_tras::tan_t(boost::multiprecision::cpp_dec_float_50 a) { // si se usa un k*pi/2, esto tiende a infinito
+    return sin_t(a)* divi_t(cos_t(a));
+}
+
+cpp_dec_float_50 fun_tras::ln_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 parte_constante = 2*(a-1)* divi_t(a+1);
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=sk;
+
+    if(a<=0){
+        return 0;
+    }
+
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador = divi_t(a+1);
+
+        total += divi_t(2*i+1)*pow((a-1)*denominador,2*i);
+
+        if(abs(parte_constante*total-sk)<tolerancia){
+            break;
+        }
+
+        sk=parte_constante*total;
+    }
+    return parte_constante*total;
 
 }
 
