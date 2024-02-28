@@ -32,10 +32,17 @@ fun_tras::fun_tras() { //constructor
 fun_tras::~fun_tras() { //destrcutor
 }
 
+cpp_dec_float_50 fun_tras::factor_t(double a) { // al implementarse por iteracion calcula numeros más grandes
+    cpp_dec_float_50 fact = 1;
+    for (int i = a; i > 1; --i)
+        fact *= i;
+    return fact;
+}
+
 
 cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 x0=0;
-    int a_entero = static_cast<int>(a);
+    int a_entero = abs(static_cast<int>(a));
 
     // PENDIENTE DE ANALIZAR EL CASO DE LOS NEGATIVOS
 
@@ -59,49 +66,68 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
     }
 
     cpp_dec_float_50 xk;
-    cpp_dec_float_50 xk_anterior=x0;
-
+    cpp_dec_float_50 xk_anterior=x0; // el primer valor de xk es x0
     for(int i =1;i<max_interacion;++i){
 
-      xk=xk_anterior*(2-a*xk_anterior);
+      xk=xk_anterior*(2-abs(a)*xk_anterior); //polinomio para aproximar
+      // se usa a en absoluto en caso de que a sea negativo
+      // si a es negativo el resultado tiende a infinito
 
-      if(abs(xk-xk_anterior)<abs(tolerancia*xk_anterior)){
+      if(abs(xk-xk_anterior)<abs(tolerancia*xk_anterior)){ // condicion de parada
           break;
       }
 
       xk_anterior=xk;
 
     }
-    return xk;
+    // si a es negativo, el resultado final sera negativo
+    if(a>0){
+        return xk;
+    } else
+    return -xk;
 }
 
 cpp_dec_float_50 fun_tras::sin_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 total=0;
     cpp_dec_float_50 sk=0;
     for (int i = 0; i < max_interacion; ++i) {
-        cpp_dec_float_50 denominador= factor_t(2*i+1);
-        total += (i % 2==0 ? 1:-1)*pow(a,2*i+1)* divi_t(denominador);
+        cpp_dec_float_50 denominador= factor_t(2*i+1); // calculo (2n+1)! antes, este numero se usa como denominador
+        total += (i % 2==0 ? 1:-1)*pow(a,2*i+1)* divi_t(denominador);  // NOTA:(i % 2==0 ? 1:-1); consulta si i es par o impar
 
-        if (abs(total-sk)<tolerancia){
+        if (abs(total-sk)<tolerancia){ // condicion de parada
             return total;
         }
 
-        sk=total;
-        // NOTA:(i % 2==0 ? 1:-1); consulta si i es par o impar
+        sk=total; // guardar el valor de sk para la condicion de parada
+
     }
-    return total;
+    return total; // si se gasta la cantidad maxima de iteraciones
 }
+
+
 
 cpp_dec_float_50 fun_tras::get_pi() {
     return pi_t;
 }
 
-cpp_dec_float_50 fun_tras::factor_t(double a) {
-    cpp_dec_float_50 fact = 1;
-    for (int i = a; i > 1; --i)
-        fact *= i;
-    return fact;
+cpp_dec_float_50 fun_tras::cos_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador= factor_t(2*i); // se calcula previamente el denominador
+        total += (i % 2==0 ? 1:-1)*pow(a,2*i)* divi_t(denominador); //polinomio para aproximacion
+
+        if (abs(total-sk)<tolerancia){ // condicion de parada
+            return total;
+        }
+
+        sk=total;
+    }
+    return total;
+
 }
+
 
 
 

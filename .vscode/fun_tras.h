@@ -26,6 +26,7 @@ public:
     static cpp_dec_float_50 sin_t(cpp_dec_float_50 a); //metodo para calcular sin
     static cpp_dec_float_50 factor_t(double a); //al realizar el proceso con iteracion se soporta el factorial de 2500
     static cpp_dec_float_50 get_pi();//metodo para obetener el valor de pi
+    static cpp_dec_float_50 cos_t(cpp_dec_float_50);
 
 private:
 
