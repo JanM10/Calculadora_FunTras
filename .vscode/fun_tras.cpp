@@ -156,6 +156,20 @@ cpp_dec_float_50 fun_tras::ln_t(cpp_dec_float_50 a) {
 
 }
 
+cpp_dec_float_50 fun_tras::csc_t(cpp_dec_float_50 a) {
+    return divi_t(sin_t(a));
+}
+
+cpp_dec_float_50 fun_tras::sec_t(cpp_dec_float_50 a) {
+    return divi_t(cos_t(a));
+}
+
+cpp_dec_float_50 fun_tras::cot_t(cpp_dec_float_50 a) {
+    return divi_t(tan_t(a));
+}
+
+
+
 
 
 

@@ -28,6 +28,9 @@ public:
     static cpp_dec_float_50 get_pi();//metodo para obetener el valor de pi
     static cpp_dec_float_50 cos_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 tan_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 csc_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 sec_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 cot_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 ln_t(cpp_dec_float_50 a);
 
 private:
