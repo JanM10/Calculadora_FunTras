@@ -5,37 +5,33 @@
 
 // CPP Program to demonstrate Boost Multiprecision float
 
-#include <boost/multiprecision/cpp_dec_float.hpp>
+
 #include "fun_tras.h"
 
 cpp_dec_float_50 fun_tras::eps = 2.2204 * 0.0000000000000001;
 cpp_dec_float_50 fun_tras::tolerancia = 10*0.00000001;
+cpp_dec_float_50 fun_tras::pi_t=3.14159265358979323846;
 int fun_tras::max_interacion = 2500;
-cpp_int fun_tras::fact_20;
-cpp_int fun_tras::fact_40;
-cpp_int fun_tras::fact_60;
-cpp_int fun_tras::fact_80;
-cpp_int fun_tras::fact_100;
+double fun_tras::fact_20;
+double fun_tras::fact_40;
+double fun_tras::fact_60;
+double fun_tras::fact_80;
+double fun_tras::fact_100;
 
 fun_tras::fun_tras() { //constructor
-    fact_20 = fact_t(20);
-    fact_40 = fact_t(40);
-    fact_60 = fact_t(60);
-    fact_80 = fact_t(80);
-    fact_100 = fact_t(100);
+
+    // aqui se calcularon los valores del factorial
+    // de este modo no es necesarios calcularlos cada vez que se utiliza divi_t
+    fact_20 = boost::math::factorial<double>(20);
+    fact_40 = boost::math::factorial<double>(40);
+    fact_60 = boost::math::factorial<double>(60);
+    fact_80 = boost::math::factorial<double>(80);
+    fact_100 = boost::math::factorial<double>(100);
 }
 
 fun_tras::~fun_tras() { //destrcutor
 }
 
-
-
-cpp_int fun_tras::fact_t(int a) {
-    cpp_int fact = 1;
-    for (int i = a; i > 1; --i)
-        fact *= i;
-    return fact;
-}
 
 cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 x0=0;
@@ -65,7 +61,7 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 xk;
     cpp_dec_float_50 xk_anterior=x0;
 
-    for(int i =1;i<max_interacion;i++){
+    for(int i =1;i<max_interacion;++i){
 
       xk=xk_anterior*(2-a*xk_anterior);
 
@@ -77,6 +73,34 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
 
     }
     return xk;
+}
+
+cpp_dec_float_50 fun_tras::sin_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador= factor_t(2*i+1);
+        total += (i % 2==0 ? 1:-1)*pow(a,2*i+1)* divi_t(denominador);
+
+        if (abs(total-sk)<tolerancia){
+            return total;
+        }
+
+        sk=total;
+        // NOTA:(i % 2==0 ? 1:-1); consulta si i es par o impar
+    }
+    return total;
+}
+
+cpp_dec_float_50 fun_tras::get_pi() {
+    return pi_t;
+}
+
+cpp_dec_float_50 fun_tras::factor_t(double a) {
+    cpp_dec_float_50 fact = 1;
+    for (int i = a; i > 1; --i)
+        fact *= i;
+    return fact;
 }
 
 
