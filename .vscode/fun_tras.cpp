@@ -132,7 +132,8 @@ cpp_dec_float_50 fun_tras::tan_t(boost::multiprecision::cpp_dec_float_50 a) { //
     return sin_t(a)* divi_t(cos_t(a));
 }
 
-cpp_dec_float_50 fun_tras::ln_t(cpp_dec_float_50 a) {
+cpp_dec_float_50 fun_tras::ln_t(float a) {
+    cout<<a<<endl;
     cpp_dec_float_50 parte_constante = 2*(a-1)* divi_t(a+1);
     cpp_dec_float_50 total=0;
     cpp_dec_float_50 sk=sk;
@@ -146,13 +147,14 @@ cpp_dec_float_50 fun_tras::ln_t(cpp_dec_float_50 a) {
 
         total += divi_t(2*i+1)*pow((a-1)*denominador,2*i);
 
-        if(abs(parte_constante*total-sk)<tolerancia){
+        if(abs(total-sk)<tolerancia){
             break;
         }
 
-        sk=parte_constante*total;
+        sk=total;
     }
     return parte_constante*total;
+
 
 }
 
@@ -166,6 +168,11 @@ cpp_dec_float_50 fun_tras::sec_t(cpp_dec_float_50 a) {
 
 cpp_dec_float_50 fun_tras::cot_t(cpp_dec_float_50 a) {
     return divi_t(tan_t(a));
+}
+
+cpp_dec_float_50 fun_tras::log_t(float x, double y) {
+
+    return ln_t(x)/ ln_t(y);
 }
 
 
