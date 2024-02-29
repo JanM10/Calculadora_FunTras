@@ -37,6 +37,8 @@ public:
     static cpp_dec_float_50 tanh_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 ln_t(float a);
     static cpp_dec_float_50 exp_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 asin_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 acos_t(cpp_dec_float_50 a);
 
 private:
 

@@ -218,6 +218,26 @@ cpp_dec_float_50 fun_tras::tanh_t(cpp_dec_float_50 a) {
     return sinh_t(a)* divi_t(cosh(a));
 }
 
+cpp_dec_float_50 fun_tras::asin_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador=pow(4,i)*pow(factor_t(i),2)*(2*i+1);
+        total += factor_t(2*i)*pow(a,2*i+1)*divi_t(denominador);
+
+        if (abs(total-sk)<tolerancia){ // condicion de parada
+            break;
+        }
+
+        sk=total;
+    }
+    return total;
+}
+
+cpp_dec_float_50 fun_tras::acos_t(cpp_dec_float_50 a) {
+    return pi_t*divi_t(2)- asin_t(a);
+}
+
 
 
 
