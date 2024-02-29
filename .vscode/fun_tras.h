@@ -39,6 +39,7 @@ public:
     static cpp_dec_float_50 exp_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 asin_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 acos_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 power_t(float a,float b);
 
 private:
 

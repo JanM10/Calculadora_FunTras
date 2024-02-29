@@ -133,7 +133,6 @@ cpp_dec_float_50 fun_tras::tan_t(boost::multiprecision::cpp_dec_float_50 a) { //
 }
 
 cpp_dec_float_50 fun_tras::ln_t(float a) {
-    cout<<a<<endl;
     cpp_dec_float_50 parte_constante = 2*(a-1)* divi_t(a+1);
     cpp_dec_float_50 total=0;
     cpp_dec_float_50 sk=sk;
@@ -236,6 +235,11 @@ cpp_dec_float_50 fun_tras::asin_t(cpp_dec_float_50 a) {
 
 cpp_dec_float_50 fun_tras::acos_t(cpp_dec_float_50 a) {
     return pi_t*divi_t(2)- asin_t(a);
+}
+
+cpp_dec_float_50 fun_tras::power_t(float a, float b) {
+    cpp_dec_float_50 ln=ln_t(a);
+    return exp_t(b* ln); //x^b=e^b*ln(x)
 }
 
 
