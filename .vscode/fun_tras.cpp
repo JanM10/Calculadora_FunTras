@@ -210,6 +210,11 @@ cpp_dec_float_50 fun_tras::sinh_t(cpp_dec_float_50 a) {
 
 }
 
+cpp_dec_float_50 fun_tras::exp_t(cpp_dec_float_50 a) {
+    return cosh_t(a) + sinh_t(a);
+}
+
+
 
 
 
