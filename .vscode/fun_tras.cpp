@@ -175,6 +175,41 @@ cpp_dec_float_50 fun_tras::log_t(float x, double y) {
     return ln_t(x)/ ln_t(y);
 }
 
+cpp_dec_float_50 fun_tras::cosh_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador= factor_t(2*i); // se calcula previamente el denominador
+        total += pow(a,2*i)* divi_t(denominador); //polinomio para aproximacion
+
+        if (abs(total-sk)<tolerancia){ // condicion de parada
+            break;
+        }
+
+        sk=total;
+    }
+    return total;
+}
+
+cpp_dec_float_50 fun_tras::sinh_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+
+    for (int i = 0; i < max_interacion; ++i) {
+        cpp_dec_float_50 denominador= factor_t(2*i+1); // se calcula previamente el denominador
+        total += pow(a,2*i+1)* divi_t(denominador); //polinomio para aproximacion
+
+        if (abs(total-sk)<tolerancia){ // condicion de parada
+            break;
+        }
+
+        sk=total;
+    }
+    return total;
+
+}
+
 
 
 

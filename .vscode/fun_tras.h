@@ -32,6 +32,8 @@ public:
     static cpp_dec_float_50 sec_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 cot_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 log_t(float x,double y);
+    static cpp_dec_float_50 cosh_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 sinh_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 ln_t(float a);
 
 private:
