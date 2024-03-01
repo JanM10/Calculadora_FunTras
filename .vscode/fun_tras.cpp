@@ -32,7 +32,7 @@ fun_tras::fun_tras() { //constructor
 fun_tras::~fun_tras() { //destrcutor
 }
 
-cpp_dec_float_50 fun_tras::factor_t(double a) { // al implementarse por iteracion calcula numeros más grandes
+cpp_dec_float_50 fun_tras::factor_t(long a) { // al implementarse por iteracion calcula numeros más grandes
     cpp_dec_float_50 fact = 1;
     for (int i = a; i > 1; --i)
         fact *= i;
@@ -135,7 +135,7 @@ cpp_dec_float_50 fun_tras::tan_t(boost::multiprecision::cpp_dec_float_50 a) { //
 cpp_dec_float_50 fun_tras::ln_t(float a) {
     cpp_dec_float_50 parte_constante = 2*(a-1)* divi_t(a+1);
     cpp_dec_float_50 total=0;
-    cpp_dec_float_50 sk=sk;
+    cpp_dec_float_50 sk=0;
 
     if(a<=0){
         return 0;
@@ -143,14 +143,13 @@ cpp_dec_float_50 fun_tras::ln_t(float a) {
 
     for (int i = 0; i < max_interacion; ++i) {
         cpp_dec_float_50 denominador = divi_t(a+1);
-
         total += divi_t(2*i+1)*pow((a-1)*denominador,2*i);
 
-        if(abs(total-sk)<tolerancia){
+        if(abs(parte_constante*total-sk)<tolerancia){
             break;
         }
 
-        sk=total;
+        sk=total*parte_constante;
     }
     return parte_constante*total;
 
@@ -169,7 +168,7 @@ cpp_dec_float_50 fun_tras::cot_t(cpp_dec_float_50 a) {
     return divi_t(tan_t(a));
 }
 
-cpp_dec_float_50 fun_tras::log_t(float x, double y) {
+cpp_dec_float_50 fun_tras::log_t(float x, long y) {
 
     return ln_t(x)/ ln_t(y);
 }
@@ -239,6 +238,8 @@ cpp_dec_float_50 fun_tras::acos_t(cpp_dec_float_50 a) {
 
 cpp_dec_float_50 fun_tras::power_t(float a, float b) {
     cpp_dec_float_50 ln=ln_t(a);
+    //cout<<a<<endl;
+    //cout<<ln<<endl;
     return exp_t(b* ln); //x^b=e^b*ln(x)
 }
 
@@ -277,6 +278,40 @@ cpp_dec_float_50 fun_tras::atan_t(cpp_dec_float_50 a) {
         }
     }
 }
+
+cpp_dec_float_50 fun_tras::sqrt_t(float a) {
+    if(a>0){
+        return power_t(move(a),0.5);
+    }
+    else{
+        cout<<"ERROR MATEMATICO"<<endl;
+        return -1;
+    }
+}
+
+cpp_dec_float_50 fun_tras::root_t(float x, float y) {
+    if(y != static_cast<int>(y) || static_cast<int>(y)%2 != 0){
+        cout<<"aqui"<<endl;
+        return power_t(x,1/y);
+    }
+    else{
+        cpp_dec_float_50 xk_1=0;
+        cpp_dec_float_50 xk=x* divi_t(2);
+
+        for (int i = 0; i < max_interacion; ++i) {
+            cpp_dec_float_50 denominador=y*pow(xk,y-1);
+            xk_1=xk-(pow(xk,y)-x)* divi_t(denominador);
+            if(abs(xk_1-xk)<abs(tolerancia*xk)){ // condicion de parada
+                break;
+            }
+
+            xk=xk_1;
+        }
+        return xk_1;
+    }
+}
+
+
 
 
 

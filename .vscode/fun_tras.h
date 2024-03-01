@@ -24,14 +24,14 @@ public:
     ~fun_tras(); //destructor de la clase
     static cpp_dec_float_50 divi_t(cpp_dec_float_50 a); // metodo para dividir
     static cpp_dec_float_50 sin_t(cpp_dec_float_50 a); //metodo para calcular sin
-    static cpp_dec_float_50 factor_t(double a); //al realizar el proceso con iteracion se soporta el factorial de 2500
+    static cpp_dec_float_50 factor_t(long a); //al realizar el proceso con iteracion se soporta el factorial de 2500
     static cpp_dec_float_50 get_pi();//metodo para obetener el valor de pi
     static cpp_dec_float_50 cos_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 tan_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 csc_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 sec_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 cot_t(cpp_dec_float_50 a);
-    static cpp_dec_float_50 log_t(float x,double y);
+    static cpp_dec_float_50 log_t(float x,long y);
     static cpp_dec_float_50 cosh_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 sinh_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 tanh_t(cpp_dec_float_50 a);
@@ -41,7 +41,8 @@ public:
     static cpp_dec_float_50 acos_t(cpp_dec_float_50 a);
     static cpp_dec_float_50 power_t(float a,float b);
     static cpp_dec_float_50 atan_t(cpp_dec_float_50 a);
-    static cpp_dec_float_50 sqrt_t(cpp_dec_float_50 a);
+    static cpp_dec_float_50 root_t(float x,float y);
+    static cpp_dec_float_50 sqrt_t(float a);
 
 private:
 

@@ -12,5 +12,5 @@ int main(){
     cpp_dec_float_50 pi=funTras.get_pi();
     //std::cout<<funTras.fact_t(20)<<std::endl;
     std::cout<<setprecision(numeric_limits<cpp_dec_float_50>::digits10)
-           << funTras.atan_t(0.5)<<std::endl;
+           << funTras.root_t(246,4)<<std::endl;
 }
