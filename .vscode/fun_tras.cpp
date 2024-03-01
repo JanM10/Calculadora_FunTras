@@ -242,6 +242,42 @@ cpp_dec_float_50 fun_tras::power_t(float a, float b) {
     return exp_t(b* ln); //x^b=e^b*ln(x)
 }
 
+cpp_dec_float_50 fun_tras::atan_t(cpp_dec_float_50 a) {
+    cpp_dec_float_50 total=0;
+    cpp_dec_float_50 sk=0;
+    cpp_dec_float_50 denominador=0;
+    if(-1<a && a<1){
+        for (int i = 0; i < max_interacion; ++i) {
+            total += (i % 2==0 ? 1:-1)*pow(a,2*i+1)*divi_t(2*i+1);
+            if (abs(total-sk)<tolerancia){ // condicion de parada
+                //return total;
+                break;
+            }
+            sk=total;
+        }
+        return total;
+
+    }
+    else{
+        for (int i = 0; i < max_interacion; ++i) {
+            denominador = (2*i+1)*pow(a,2*i+1);
+            total += (i % 2==0 ? 1:-1)* divi_t(denominador);
+
+            if (abs(total-sk)<tolerancia){ // condicion de parada
+                break;
+            }
+            sk=total;
+        }
+
+        if (a>1){
+            return pi_t*divi_t(2)-total;
+        }
+        else{
+            return -1*pi_t*divi_t(2)-total;
+        }
+    }
+}
+
 
 
 
