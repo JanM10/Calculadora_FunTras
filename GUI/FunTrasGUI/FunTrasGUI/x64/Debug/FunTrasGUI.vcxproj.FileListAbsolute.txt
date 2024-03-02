@@ -1,0 +1,3 @@
+C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\x64\Debug\FunTrasGUI.vcxproj.AssemblyReference.cache
+C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\x64\Debug\FunTrasGUI.Calculadora.resources
+C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\x64\Debug\FunTrasGUI.vcxproj.GenerateResource.cache
