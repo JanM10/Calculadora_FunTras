@@ -59,9 +59,11 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ bootn2;
 
 	private: System::Windows::Forms::Button^ boton1;
+	private: System::Windows::Forms::Button^ botonResultado;
 
-	private: System::Windows::Forms::Button^ button13;
-	private: System::Windows::Forms::Button^ button14;
+
+	private: System::Windows::Forms::Button^ botonDecimal;
+
 	private: System::Windows::Forms::Button^ button15;
 	private: System::Windows::Forms::Button^ button16;
 	private: System::Windows::Forms::Button^ button1;
@@ -96,8 +98,8 @@ namespace FunTrasGUI {
 			this->boton3 = (gcnew System::Windows::Forms::Button());
 			this->bootn2 = (gcnew System::Windows::Forms::Button());
 			this->boton1 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->botonResultado = (gcnew System::Windows::Forms::Button());
+			this->botonDecimal = (gcnew System::Windows::Forms::Button());
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -166,6 +168,7 @@ namespace FunTrasGUI {
 			this->button4->TabIndex = 5;
 			this->button4->Text = L"X";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// button5
 			// 
@@ -177,6 +180,7 @@ namespace FunTrasGUI {
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"-";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// boton6
 			// 
@@ -224,6 +228,7 @@ namespace FunTrasGUI {
 			this->button9->TabIndex = 13;
 			this->button9->Text = L"+";
 			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// boton3
 			// 
@@ -261,28 +266,30 @@ namespace FunTrasGUI {
 			this->boton1->UseVisualStyleBackColor = true;
 			this->boton1->Click += gcnew System::EventHandler(this, &Calculadora::EnterNumber);
 			// 
-			// button13
+			// botonResultado
 			// 
-			this->button13->BackColor = System::Drawing::Color::RoyalBlue;
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->botonResultado->BackColor = System::Drawing::Color::RoyalBlue;
+			this->botonResultado->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button13->Location = System::Drawing::Point(421, 741);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(120, 90);
-			this->button13->TabIndex = 17;
-			this->button13->Text = L"=";
-			this->button13->UseVisualStyleBackColor = false;
+			this->botonResultado->Location = System::Drawing::Point(421, 741);
+			this->botonResultado->Name = L"botonResultado";
+			this->botonResultado->Size = System::Drawing::Size(120, 90);
+			this->botonResultado->TabIndex = 17;
+			this->botonResultado->Text = L"=";
+			this->botonResultado->UseVisualStyleBackColor = false;
+			this->botonResultado->Click += gcnew System::EventHandler(this, &Calculadora::botonResultado_Click);
 			// 
-			// button14
+			// botonDecimal
 			// 
-			this->button14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->botonDecimal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button14->Location = System::Drawing::Point(290, 741);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(120, 90);
-			this->button14->TabIndex = 16;
-			this->button14->Text = L",";
-			this->button14->UseVisualStyleBackColor = true;
+			this->botonDecimal->Location = System::Drawing::Point(290, 741);
+			this->botonDecimal->Name = L"botonDecimal";
+			this->botonDecimal->Size = System::Drawing::Size(120, 90);
+			this->botonDecimal->TabIndex = 16;
+			this->botonDecimal->Text = L".";
+			this->botonDecimal->UseVisualStyleBackColor = true;
+			this->botonDecimal->Click += gcnew System::EventHandler(this, &Calculadora::botonDecimal_Click);
 			// 
 			// button15
 			// 
@@ -316,8 +323,9 @@ namespace FunTrasGUI {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(120, 90);
 			this->button1->TabIndex = 21;
-			this->button1->Text = L"+/-";
+			this->button1->Text = L"÷";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// button2
 			// 
@@ -349,7 +357,7 @@ namespace FunTrasGUI {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(120, 90);
 			this->button6->TabIndex = 18;
-			this->button6->Text = L"%";
+			this->button6->Text = L"+/-";
 			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// Calculadora
@@ -362,8 +370,8 @@ namespace FunTrasGUI {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button13);
-			this->Controls->Add(this->button14);
+			this->Controls->Add(this->botonResultado);
+			this->Controls->Add(this->botonDecimal);
 			this->Controls->Add(this->button15);
 			this->Controls->Add(this->button16);
 			this->Controls->Add(this->button9);
@@ -387,6 +395,9 @@ namespace FunTrasGUI {
 
 		}
 #pragma endregion
+		double firstDigit, secondDigit, result;
+		String^ operators;
+
 	private: System::Void Calculadora_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -402,6 +413,7 @@ private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
+	
 	Button^ Numbers = safe_cast<Button^>(sender);
 
 	if (txtDisplay->Text == "0")
@@ -412,6 +424,56 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 	{
 		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
 	}
+}
+private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
+
+	Button^ NumbersOp = safe_cast<Button^>(sender);
+	firstDigit = Double::Parse(txtDisplay->Text);
+
+	txtDisplay->Text = "";
+	operators = NumbersOp->Text;
+}
+	  
+private: System::Void botonDecimal_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!txtDisplay->Text->Contains ("."))
+	{
+		txtDisplay->Text = txtDisplay->Text + ".";
+	}
+}
+
+private: System::Void botonResultado_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	secondDigit = Double::Parse(txtDisplay->Text);
+
+	// Se aplica el operador de suma
+	if (operators == "+")
+	{
+		result = firstDigit + secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+
+	// Se aplica el operador de resta
+	else if (operators == "-")
+	{
+		result = firstDigit - secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+
+	// Se aplica el operador de multiplicacion
+	else if (operators == "*")
+	{
+		result = firstDigit - secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+
+	// Se aplica el operador de division ÷
+	else if (operators == "/")
+	{
+		result = firstDigit - secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+
 }
 };
 }
