@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+
 namespace FunTrasGUI {
 
 	using namespace System;
@@ -65,17 +66,24 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ botonDecimal;
 
 	private: System::Windows::Forms::Button^ button15;
-	private: System::Windows::Forms::Button^ button16;
+	private: System::Windows::Forms::Button^ botonPI;
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ botonC;
+	private: System::Windows::Forms::Button^ botonCE;
 
-	private: System::Windows::Forms::Button^ button3;
+
+
 	private: System::Windows::Forms::Button^ botonMasMenos;
 	private: System::Windows::Forms::Button^ botonBorrar;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ botonCos;
+
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ boton_divi_t;
+
+
+
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Button^ button12;
@@ -124,16 +132,16 @@ namespace FunTrasGUI {
 			this->botonResultado = (gcnew System::Windows::Forms::Button());
 			this->botonDecimal = (gcnew System::Windows::Forms::Button());
 			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->botonPI = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->botonC = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->botonCE = (gcnew System::Windows::Forms::Button());
 			this->botonMasMenos = (gcnew System::Windows::Forms::Button());
 			this->botonBorrar = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->botonCos = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->boton_divi_t = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
@@ -159,7 +167,7 @@ namespace FunTrasGUI {
 			this->txtDisplay->Multiline = true;
 			this->txtDisplay->Name = L"txtDisplay";
 			this->txtDisplay->ReadOnly = true;
-			this->txtDisplay->Size = System::Drawing::Size(512, 80);
+			this->txtDisplay->Size = System::Drawing::Size(1354, 80);
 			this->txtDisplay->TabIndex = 1;
 			this->txtDisplay->Text = L"0";
 			this->txtDisplay->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
@@ -217,7 +225,7 @@ namespace FunTrasGUI {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(120, 90);
 			this->button4->TabIndex = 5;
-			this->button4->Text = L"X";
+			this->button4->Text = L"x";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
@@ -335,7 +343,7 @@ namespace FunTrasGUI {
 			// 
 			// botonResultado
 			// 
-			this->botonResultado->BackColor = System::Drawing::Color::RoyalBlue;
+			this->botonResultado->BackColor = System::Drawing::Color::Orange;
 			this->botonResultado->FlatAppearance->BorderColor = System::Drawing::Color::Black;
 			this->botonResultado->FlatAppearance->BorderSize = 0;
 			this->botonResultado->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -376,19 +384,19 @@ namespace FunTrasGUI {
 			this->button15->UseVisualStyleBackColor = true;
 			this->button15->Click += gcnew System::EventHandler(this, &Calculadora::EnterNumber);
 			// 
-			// button16
+			// botonPI
 			// 
-			this->button16->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button16->FlatAppearance->BorderSize = 0;
-			this->button16->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->botonPI->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonPI->FlatAppearance->BorderSize = 0;
+			this->botonPI->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button16->Location = System::Drawing::Point(23, 741);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(120, 90);
-			this->button16->TabIndex = 14;
-			this->button16->Text = L"π";
-			this->button16->UseVisualStyleBackColor = true;
-			this->button16->Click += gcnew System::EventHandler(this, &Calculadora::EnterNumber);
+			this->botonPI->Location = System::Drawing::Point(23, 741);
+			this->botonPI->Name = L"botonPI";
+			this->botonPI->Size = System::Drawing::Size(120, 90);
+			this->botonPI->TabIndex = 14;
+			this->botonPI->Text = L"π";
+			this->botonPI->UseVisualStyleBackColor = true;
+			this->botonPI->Click += gcnew System::EventHandler(this, &Calculadora::botonPI_Click);
 			// 
 			// button1
 			// 
@@ -418,18 +426,19 @@ namespace FunTrasGUI {
 			this->botonC->UseVisualStyleBackColor = true;
 			this->botonC->Click += gcnew System::EventHandler(this, &Calculadora::botonC_Click);
 			// 
-			// button3
+			// botonCE
 			// 
-			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button3->FlatAppearance->BorderSize = 0;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->botonCE->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonCE->FlatAppearance->BorderSize = 0;
+			this->botonCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(156, 273);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(120, 90);
-			this->button3->TabIndex = 19;
-			this->button3->Text = L"CE";
-			this->button3->UseVisualStyleBackColor = true;
+			this->botonCE->Location = System::Drawing::Point(156, 273);
+			this->botonCE->Name = L"botonCE";
+			this->botonCE->Size = System::Drawing::Size(120, 90);
+			this->botonCE->TabIndex = 19;
+			this->botonCE->Text = L"CE";
+			this->botonCE->UseVisualStyleBackColor = true;
+			this->botonCE->Click += gcnew System::EventHandler(this, &Calculadora::botonCE_Click);
 			// 
 			// botonMasMenos
 			// 
@@ -459,18 +468,19 @@ namespace FunTrasGUI {
 			this->botonBorrar->UseVisualStyleBackColor = true;
 			this->botonBorrar->Click += gcnew System::EventHandler(this, &Calculadora::botonBorrar_Click);
 			// 
-			// button2
+			// botonCos
 			// 
-			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonCos->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonCos->FlatAppearance->BorderSize = 0;
+			this->botonCos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(1193, 392);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(190, 90);
-			this->button2->TabIndex = 26;
-			this->button2->Text = L"cos(x)";
-			this->button2->UseVisualStyleBackColor = true;
+			this->botonCos->Location = System::Drawing::Point(1193, 392);
+			this->botonCos->Name = L"botonCos";
+			this->botonCos->Size = System::Drawing::Size(190, 90);
+			this->botonCos->TabIndex = 26;
+			this->botonCos->Text = L"cos(x)";
+			this->botonCos->UseVisualStyleBackColor = true;
+			this->botonCos->Click += gcnew System::EventHandler(this, &Calculadora::botonCos_Click);
 			// 
 			// button6
 			// 
@@ -498,18 +508,18 @@ namespace FunTrasGUI {
 			this->button7->Text = L"e^x";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
-			// button8
+			// boton_divi_t
 			// 
-			this->button8->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button8->FlatAppearance->BorderSize = 0;
-			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->boton_divi_t->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->boton_divi_t->FlatAppearance->BorderSize = 0;
+			this->boton_divi_t->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(563, 390);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(190, 90);
-			this->button8->TabIndex = 23;
-			this->button8->Text = L"x^-1";
-			this->button8->UseVisualStyleBackColor = true;
+			this->boton_divi_t->Location = System::Drawing::Point(563, 390);
+			this->boton_divi_t->Name = L"boton_divi_t";
+			this->boton_divi_t->Size = System::Drawing::Size(190, 90);
+			this->boton_divi_t->TabIndex = 23;
+			this->boton_divi_t->Text = L"1/x";
+			this->boton_divi_t->UseVisualStyleBackColor = true;
 			// 
 			// button10
 			// 
@@ -625,7 +635,7 @@ namespace FunTrasGUI {
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(190, 90);
 			this->button20->TabIndex = 38;
-			this->button20->Text = L"cos^1(x)";
+			this->button20->Text = L"cos^-1(x)";
 			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// button21
@@ -710,8 +720,8 @@ namespace FunTrasGUI {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::DimGray;
-			this->ClientSize = System::Drawing::Size(1431, 852);
+			this->BackColor = System::Drawing::Color::Teal;
+			this->ClientSize = System::Drawing::Size(1411, 852);
 			this->Controls->Add(this->button26);
 			this->Controls->Add(this->button25);
 			this->Controls->Add(this->button24);
@@ -727,19 +737,19 @@ namespace FunTrasGUI {
 			this->Controls->Add(this->button11);
 			this->Controls->Add(this->button12);
 			this->Controls->Add(this->button13);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->botonCos);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button8);
+			this->Controls->Add(this->boton_divi_t);
 			this->Controls->Add(this->botonBorrar);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->botonC);
-			this->Controls->Add(this->button3);
+			this->Controls->Add(this->botonCE);
 			this->Controls->Add(this->botonMasMenos);
 			this->Controls->Add(this->botonResultado);
 			this->Controls->Add(this->botonDecimal);
 			this->Controls->Add(this->button15);
-			this->Controls->Add(this->button16);
+			this->Controls->Add(this->botonPI);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->boton3);
 			this->Controls->Add(this->bootn2);
@@ -761,7 +771,7 @@ namespace FunTrasGUI {
 
 		}
 #pragma endregion
-		double firstDigit, secondDigit, result;
+		double firstDigit, secondDigit, soloOperation, result;
 		String^ operators;
 
 	private: System::Void Calculadora_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -779,7 +789,7 @@ private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
-	
+
 	Button^ Numbers = safe_cast<Button^>(sender);
 
 	if (txtDisplay->Text == "0")
@@ -801,10 +811,10 @@ private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e
 }
 	  
 private: System::Void botonDecimal_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	if (!txtDisplay->Text->Contains ("."))
+	//Existe un error que no deja utilizar "." a la hora de hacer el Parse por ende se usa ","
+	if (!txtDisplay->Text->Contains (","))
 	{
-		txtDisplay->Text = txtDisplay->Text + ".";
+		txtDisplay->Text = txtDisplay->Text + ",";
 	}
 }
 
@@ -827,7 +837,7 @@ private: System::Void botonResultado_Click(System::Object^ sender, System::Event
 	}
 
 	// Se aplica el operador de multiplicacion
-	else if (operators == "X")
+	else if (operators == "x")
 	{
 		result = firstDigit * secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result);
@@ -858,6 +868,7 @@ private: System::Void botonMasMenos_Click(System::Object^ sender, System::EventA
 	}
 
 }
+
 private: System::Void botonBorrar_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if (txtDisplay->Text->Length > 0)
@@ -865,6 +876,22 @@ private: System::Void botonBorrar_Click(System::Object^ sender, System::EventArg
 		txtDisplay->Text = txtDisplay->Text->Remove(txtDisplay->Text->Length - 1, 1);
 	}
 
+}
+
+private: System::Void botonCE_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	txtDisplay->Clear();
+
+}
+private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	txtDisplay->Text = ("3.141592");
+}
+
+private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = Math::Cos(soloOperation);
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
 }
 };
 }

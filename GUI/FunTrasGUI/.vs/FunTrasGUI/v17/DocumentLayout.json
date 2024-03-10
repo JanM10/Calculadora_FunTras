@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|solutionrelative:FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|solutionrelative:FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|solutionrelative:FunTrasGUI\\Calculadora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +30,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Calculadora.h",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
               "ToolTip": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
               "RelativeToolTip": "FunTrasGUI\\Calculadora.h",
-              "ViewState": "AQIAAEcDAAAAAAAAAAApwF8DAAACAAAA",
+              "ViewState": "AQIAAGsDAAAAAAAAAAAIwH4DAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-01T04:53:53.827Z",
               "EditorCaption": ""
@@ -49,13 +49,14 @@
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.cpp",
               "ToolTip": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.cpp",
               "RelativeToolTip": "FunTrasGUI\\Calculadora.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA6AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-01T04:41:25.321Z"
+              "WhenOpened": "2024-03-01T04:41:25.321Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Calculadora.h [Design]",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
