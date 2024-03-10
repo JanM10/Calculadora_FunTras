@@ -77,9 +77,11 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ botonMasMenos;
 	private: System::Windows::Forms::Button^ botonBorrar;
 	private: System::Windows::Forms::Button^ botonCos;
+	private: System::Windows::Forms::Button^ botonSin;
+	private: System::Windows::Forms::Button^ botonExp;
 
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
+
+
 	private: System::Windows::Forms::Button^ boton_divi_t;
 
 
@@ -87,18 +89,25 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Button^ button12;
-	private: System::Windows::Forms::Button^ button13;
+	private: System::Windows::Forms::Button^ botonTan;
+
 	private: System::Windows::Forms::Button^ button14;
-	private: System::Windows::Forms::Button^ button17;
-	private: System::Windows::Forms::Button^ button18;
-	private: System::Windows::Forms::Button^ button19;
+	private: System::Windows::Forms::Button^ botonTanh;
+
+	private: System::Windows::Forms::Button^ botonCosh;
+
+	private: System::Windows::Forms::Button^ botonSinh;
+
 	private: System::Windows::Forms::Button^ button20;
 	private: System::Windows::Forms::Button^ button21;
 	private: System::Windows::Forms::Button^ button22;
 	private: System::Windows::Forms::Button^ button23;
-	private: System::Windows::Forms::Button^ button24;
-	private: System::Windows::Forms::Button^ button25;
-	private: System::Windows::Forms::Button^ button26;
+	private: System::Windows::Forms::Button^ botonSec;
+
+	private: System::Windows::Forms::Button^ botonCot;
+	private: System::Windows::Forms::Button^ botonCsc;
+
+
 
 
 
@@ -139,24 +148,24 @@ namespace FunTrasGUI {
 			this->botonMasMenos = (gcnew System::Windows::Forms::Button());
 			this->botonBorrar = (gcnew System::Windows::Forms::Button());
 			this->botonCos = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->botonSin = (gcnew System::Windows::Forms::Button());
+			this->botonExp = (gcnew System::Windows::Forms::Button());
 			this->boton_divi_t = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->botonTan = (gcnew System::Windows::Forms::Button());
 			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button17 = (gcnew System::Windows::Forms::Button());
-			this->button18 = (gcnew System::Windows::Forms::Button());
-			this->button19 = (gcnew System::Windows::Forms::Button());
+			this->botonTanh = (gcnew System::Windows::Forms::Button());
+			this->botonCosh = (gcnew System::Windows::Forms::Button());
+			this->botonSinh = (gcnew System::Windows::Forms::Button());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->button22 = (gcnew System::Windows::Forms::Button());
 			this->button23 = (gcnew System::Windows::Forms::Button());
-			this->button24 = (gcnew System::Windows::Forms::Button());
-			this->button25 = (gcnew System::Windows::Forms::Button());
-			this->button26 = (gcnew System::Windows::Forms::Button());
+			this->botonSec = (gcnew System::Windows::Forms::Button());
+			this->botonCot = (gcnew System::Windows::Forms::Button());
+			this->botonCsc = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
@@ -482,31 +491,32 @@ namespace FunTrasGUI {
 			this->botonCos->UseVisualStyleBackColor = true;
 			this->botonCos->Click += gcnew System::EventHandler(this, &Calculadora::botonCos_Click);
 			// 
-			// button6
+			// botonSin
 			// 
-			this->button6->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button6->FlatAppearance->BorderSize = 0;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonSin->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonSin->FlatAppearance->BorderSize = 0;
+			this->botonSin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(984, 392);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(190, 90);
-			this->button6->TabIndex = 25;
-			this->button6->Text = L"sin(x)";
-			this->button6->UseVisualStyleBackColor = true;
+			this->botonSin->Location = System::Drawing::Point(984, 392);
+			this->botonSin->Name = L"botonSin";
+			this->botonSin->Size = System::Drawing::Size(190, 90);
+			this->botonSin->TabIndex = 25;
+			this->botonSin->Text = L"sin(x)";
+			this->botonSin->UseVisualStyleBackColor = true;
 			// 
-			// button7
+			// botonExp
 			// 
-			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button7->FlatAppearance->BorderSize = 0;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonExp->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonExp->FlatAppearance->BorderSize = 0;
+			this->botonExp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(772, 391);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(190, 90);
-			this->button7->TabIndex = 24;
-			this->button7->Text = L"e^x";
-			this->button7->UseVisualStyleBackColor = true;
+			this->botonExp->Location = System::Drawing::Point(772, 391);
+			this->botonExp->Name = L"botonExp";
+			this->botonExp->Size = System::Drawing::Size(190, 90);
+			this->botonExp->TabIndex = 24;
+			this->botonExp->Text = L"e^x";
+			this->botonExp->UseVisualStyleBackColor = true;
+			this->botonExp->Click += gcnew System::EventHandler(this, &Calculadora::botonExp_Click);
 			// 
 			// boton_divi_t
 			// 
@@ -520,6 +530,7 @@ namespace FunTrasGUI {
 			this->boton_divi_t->TabIndex = 23;
 			this->boton_divi_t->Text = L"1/x";
 			this->boton_divi_t->UseVisualStyleBackColor = true;
+			this->boton_divi_t->Click += gcnew System::EventHandler(this, &Calculadora::boton_divi_t_Click);
 			// 
 			// button10
 			// 
@@ -560,18 +571,18 @@ namespace FunTrasGUI {
 			this->button12->Text = L"ln(x)";
 			this->button12->UseVisualStyleBackColor = true;
 			// 
-			// button13
+			// botonTan
 			// 
-			this->button13->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button13->FlatAppearance->BorderSize = 0;
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonTan->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonTan->FlatAppearance->BorderSize = 0;
+			this->botonTan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button13->Location = System::Drawing::Point(563, 507);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(190, 90);
-			this->button13->TabIndex = 27;
-			this->button13->Text = L"tan(x)";
-			this->button13->UseVisualStyleBackColor = true;
+			this->botonTan->Location = System::Drawing::Point(563, 507);
+			this->botonTan->Name = L"botonTan";
+			this->botonTan->Size = System::Drawing::Size(190, 90);
+			this->botonTan->TabIndex = 27;
+			this->botonTan->Text = L"tan(x)";
+			this->botonTan->UseVisualStyleBackColor = true;
 			// 
 			// button14
 			// 
@@ -586,44 +597,44 @@ namespace FunTrasGUI {
 			this->button14->Text = L"√x";
 			this->button14->UseVisualStyleBackColor = true;
 			// 
-			// button17
+			// botonTanh
 			// 
-			this->button17->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button17->FlatAppearance->BorderSize = 0;
-			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonTanh->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonTanh->FlatAppearance->BorderSize = 0;
+			this->botonTanh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button17->Location = System::Drawing::Point(984, 626);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(190, 90);
-			this->button17->TabIndex = 33;
-			this->button17->Text = L"tanh(x)";
-			this->button17->UseVisualStyleBackColor = true;
+			this->botonTanh->Location = System::Drawing::Point(984, 626);
+			this->botonTanh->Name = L"botonTanh";
+			this->botonTanh->Size = System::Drawing::Size(190, 90);
+			this->botonTanh->TabIndex = 33;
+			this->botonTanh->Text = L"tanh(x)";
+			this->botonTanh->UseVisualStyleBackColor = true;
 			// 
-			// button18
+			// botonCosh
 			// 
-			this->button18->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button18->FlatAppearance->BorderSize = 0;
-			this->button18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonCosh->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonCosh->FlatAppearance->BorderSize = 0;
+			this->botonCosh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button18->Location = System::Drawing::Point(772, 625);
-			this->button18->Name = L"button18";
-			this->button18->Size = System::Drawing::Size(190, 90);
-			this->button18->TabIndex = 32;
-			this->button18->Text = L"cosh(x)";
-			this->button18->UseVisualStyleBackColor = true;
+			this->botonCosh->Location = System::Drawing::Point(772, 625);
+			this->botonCosh->Name = L"botonCosh";
+			this->botonCosh->Size = System::Drawing::Size(190, 90);
+			this->botonCosh->TabIndex = 32;
+			this->botonCosh->Text = L"cosh(x)";
+			this->botonCosh->UseVisualStyleBackColor = true;
 			// 
-			// button19
+			// botonSinh
 			// 
-			this->button19->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button19->FlatAppearance->BorderSize = 0;
-			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonSinh->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonSinh->FlatAppearance->BorderSize = 0;
+			this->botonSinh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button19->Location = System::Drawing::Point(563, 624);
-			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(190, 90);
-			this->button19->TabIndex = 31;
-			this->button19->Text = L"sinh(x)";
-			this->button19->UseVisualStyleBackColor = true;
+			this->botonSinh->Location = System::Drawing::Point(563, 624);
+			this->botonSinh->Name = L"botonSinh";
+			this->botonSinh->Size = System::Drawing::Size(190, 90);
+			this->botonSinh->TabIndex = 31;
+			this->botonSinh->Text = L"sinh(x)";
+			this->botonSinh->UseVisualStyleBackColor = true;
 			// 
 			// button20
 			// 
@@ -677,44 +688,47 @@ namespace FunTrasGUI {
 			this->button23->Text = L"y√x";
 			this->button23->UseVisualStyleBackColor = true;
 			// 
-			// button24
+			// botonSec
 			// 
-			this->button24->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button24->FlatAppearance->BorderSize = 0;
-			this->button24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonSec->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonSec->FlatAppearance->BorderSize = 0;
+			this->botonSec->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button24->Location = System::Drawing::Point(772, 275);
-			this->button24->Name = L"button24";
-			this->button24->Size = System::Drawing::Size(190, 90);
-			this->button24->TabIndex = 39;
-			this->button24->Text = L"sec(x)";
-			this->button24->UseVisualStyleBackColor = true;
+			this->botonSec->Location = System::Drawing::Point(772, 275);
+			this->botonSec->Name = L"botonSec";
+			this->botonSec->Size = System::Drawing::Size(190, 90);
+			this->botonSec->TabIndex = 39;
+			this->botonSec->Text = L"sec(x)";
+			this->botonSec->UseVisualStyleBackColor = true;
+			this->botonSec->Click += gcnew System::EventHandler(this, &Calculadora::botonSec_Click);
 			// 
-			// button25
+			// botonCot
 			// 
-			this->button25->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button25->FlatAppearance->BorderSize = 0;
-			this->button25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonCot->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonCot->FlatAppearance->BorderSize = 0;
+			this->botonCot->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button25->Location = System::Drawing::Point(984, 275);
-			this->button25->Name = L"button25";
-			this->button25->Size = System::Drawing::Size(190, 90);
-			this->button25->TabIndex = 40;
-			this->button25->Text = L"cot(x)";
-			this->button25->UseVisualStyleBackColor = true;
+			this->botonCot->Location = System::Drawing::Point(984, 275);
+			this->botonCot->Name = L"botonCot";
+			this->botonCot->Size = System::Drawing::Size(190, 90);
+			this->botonCot->TabIndex = 40;
+			this->botonCot->Text = L"cot(x)";
+			this->botonCot->UseVisualStyleBackColor = true;
+			this->botonCot->Click += gcnew System::EventHandler(this, &Calculadora::botonCot_Click);
 			// 
-			// button26
+			// botonCsc
 			// 
-			this->button26->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button26->FlatAppearance->BorderSize = 0;
-			this->button26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonCsc->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonCsc->FlatAppearance->BorderSize = 0;
+			this->botonCsc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button26->Location = System::Drawing::Point(1193, 275);
-			this->button26->Name = L"button26";
-			this->button26->Size = System::Drawing::Size(190, 90);
-			this->button26->TabIndex = 41;
-			this->button26->Text = L"csc(x)";
-			this->button26->UseVisualStyleBackColor = true;
+			this->botonCsc->Location = System::Drawing::Point(1193, 275);
+			this->botonCsc->Name = L"botonCsc";
+			this->botonCsc->Size = System::Drawing::Size(190, 90);
+			this->botonCsc->TabIndex = 41;
+			this->botonCsc->Text = L"csc(x)";
+			this->botonCsc->UseVisualStyleBackColor = true;
+			this->botonCsc->Click += gcnew System::EventHandler(this, &Calculadora::botonCsc_Click);
 			// 
 			// Calculadora
 			// 
@@ -722,24 +736,24 @@ namespace FunTrasGUI {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Teal;
 			this->ClientSize = System::Drawing::Size(1411, 852);
-			this->Controls->Add(this->button26);
-			this->Controls->Add(this->button25);
-			this->Controls->Add(this->button24);
+			this->Controls->Add(this->botonCsc);
+			this->Controls->Add(this->botonCot);
+			this->Controls->Add(this->botonSec);
 			this->Controls->Add(this->button20);
 			this->Controls->Add(this->button21);
 			this->Controls->Add(this->button22);
 			this->Controls->Add(this->button23);
 			this->Controls->Add(this->button14);
-			this->Controls->Add(this->button17);
-			this->Controls->Add(this->button18);
-			this->Controls->Add(this->button19);
+			this->Controls->Add(this->botonTanh);
+			this->Controls->Add(this->botonCosh);
+			this->Controls->Add(this->botonSinh);
 			this->Controls->Add(this->button10);
 			this->Controls->Add(this->button11);
 			this->Controls->Add(this->button12);
-			this->Controls->Add(this->button13);
+			this->Controls->Add(this->botonTan);
 			this->Controls->Add(this->botonCos);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button7);
+			this->Controls->Add(this->botonSin);
+			this->Controls->Add(this->botonExp);
 			this->Controls->Add(this->boton_divi_t);
 			this->Controls->Add(this->botonBorrar);
 			this->Controls->Add(this->button1);
@@ -887,10 +901,37 @@ private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e
 
 	txtDisplay->Text = ("3.141592");
 }
+private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = (1/Math::Cos(soloOperation));
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
+}
+
+private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = (1/Math::Tan(soloOperation));
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
+}
+
+private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = (1/Math::Sin(soloOperation));
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
+}
 
 private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
 	soloOperation = Double::Parse(txtDisplay->Text);
 	soloOperation = Math::Cos(soloOperation);
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
+}
+private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = (1/soloOperation);
+	txtDisplay->Text = System::Convert::ToString(soloOperation);
+}
+private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ e) {
+	soloOperation = Double::Parse(txtDisplay->Text);
+	soloOperation = Math::Exp(soloOperation);
 	txtDisplay->Text = System::Convert::ToString(soloOperation);
 }
 };
