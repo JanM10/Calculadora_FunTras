@@ -1,4 +1,13 @@
-﻿#pragma once
+﻿#include <boost/multiprecision/cpp_dec_float.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/lexical_cast.hpp>
+#include <msclr/marshal_cppstd.h> // Para la conversión de String^ a std::string
+#include <msclr/marshal.h>
+#include "fun_tras.h"
+
+
+#pragma once
+
 
 
 namespace FunTrasGUI {
@@ -9,6 +18,8 @@ namespace FunTrasGUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace boost::multiprecision;
+	using namespace msclr::interop;
 
 	/// <summary>
 	/// Summary for Calculadora
@@ -787,6 +798,9 @@ namespace FunTrasGUI {
 #pragma endregion
 		double firstDigit, secondDigit, soloOperation, result;
 		String^ operators;
+		fun_tras* funTras = new fun_tras();
+		typedef number<cpp_dec_float<50>> cpp_dec_float_50;
+		cpp_dec_float_50* soloOperation_1;
 
 	private: System::Void Calculadora_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -818,7 +832,9 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
 
 	Button^ NumbersOp = safe_cast<Button^>(sender);
-	firstDigit = Double::Parse(txtDisplay->Text);
+	String^ cadenaReemplazada = (txtDisplay->Text)->Replace(".", ",");
+	firstDigit = Double::Parse(cadenaReemplazada);
+	//double firstDigit = System::Convert::ToDouble(cadenaReemplazada);
 
 	txtDisplay->Text = "";
 	operators = NumbersOp->Text;
@@ -826,42 +842,42 @@ private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e
 	  
 private: System::Void botonDecimal_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Existe un error que no deja utilizar "." a la hora de hacer el Parse por ende se usa ","
-	if (!txtDisplay->Text->Contains (","))
+	if (!txtDisplay->Text->Contains ("."))
 	{
-		txtDisplay->Text = txtDisplay->Text + ",";
+		txtDisplay->Text = txtDisplay->Text + ".";
 	}
 }
 
 private: System::Void botonResultado_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	secondDigit = Double::Parse(txtDisplay->Text);
+	String^ cadenaReemplazada = (txtDisplay->Text)->Replace(".", ",");
+	secondDigit = Double::Parse(cadenaReemplazada);
 
 	// Se aplica el operador de suma
 	if (operators == "+")
 	{
 		result = firstDigit + secondDigit;
-		txtDisplay->Text = System::Convert::ToString(result);
+		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 	// Se aplica el operador de resta
 	else if (operators == "-")
 	{
 		result = firstDigit - secondDigit;
-		txtDisplay->Text = System::Convert::ToString(result);
+		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 	// Se aplica el operador de multiplicacion
 	else if (operators == "x")
 	{
 		result = firstDigit * secondDigit;
-		txtDisplay->Text = System::Convert::ToString(result);
+		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 	// Se aplica el operador de division ÷
 	else if (operators == "÷")
 	{
 		result = firstDigit / secondDigit;
-		txtDisplay->Text = System::Convert::ToString(result);
+		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 }
@@ -899,12 +915,17 @@ private: System::Void botonCE_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	txtDisplay->Text = ("3.141592");
+	txtDisplay->Text = ("3.14159265358979323846");
 }
 private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = (1/Math::Cos(soloOperation));
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->cos_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 
 private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -920,9 +941,14 @@ private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ 
 }
 
 private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = Math::Cos(soloOperation);
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->cos_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
 	soloOperation = Double::Parse(txtDisplay->Text);
