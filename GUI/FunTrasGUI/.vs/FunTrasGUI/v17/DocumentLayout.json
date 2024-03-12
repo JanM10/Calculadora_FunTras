@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|solutionrelative:FunTrasGUI\\fun_tras.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A3B887C3-88B5-4ED6-9F57-43FCDC958E16}|FunTrasGUI\\FunTrasGUI.vcxproj|solutionrelative:FunTrasGUI\\fun_tras.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "fun_tras.cpp",
+              "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.cpp",
+              "RelativeDocumentMoniker": "FunTrasGUI\\fun_tras.cpp",
+              "ToolTip": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.cpp",
+              "RelativeToolTip": "FunTrasGUI\\fun_tras.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-12T01:11:21.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "fun_tras.h",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.h",
               "RelativeDocumentMoniker": "FunTrasGUI\\fun_tras.h",
@@ -47,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Calculadora.h",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
@@ -55,12 +72,11 @@
               "RelativeToolTip": "FunTrasGUI\\Calculadora.h",
               "ViewState": "AQIAAFwDAAAAAAAAAAAUwKADAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-01T04:53:53.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-01T04:53:53.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Calculadora.cpp",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.cpp",
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.cpp",
@@ -72,15 +88,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Calculadora.h [Design]",
               "DocumentMoniker": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
               "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
               "ToolTip": "C:\\Users\\jmars\\OneDrive\\Documentos\\GitHub\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h [Design]",
               "RelativeToolTip": "FunTrasGUI\\Calculadora.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-02T17:45:55.742Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-02T17:45:55.742Z"
             }
           ]
         }

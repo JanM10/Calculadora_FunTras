@@ -18,6 +18,9 @@
     <ClCompile Include="Calculadora.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fun_tras.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculadora.h">
