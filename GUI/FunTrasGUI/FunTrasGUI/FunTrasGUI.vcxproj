@@ -129,6 +129,7 @@
     <ClInclude Include="Calculadora.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="fun_tras.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Calculadora.resx">
