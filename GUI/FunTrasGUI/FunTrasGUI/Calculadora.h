@@ -514,7 +514,7 @@ namespace FunTrasGUI {
 			this->botonExp->Name = L"botonExp";
 			this->botonExp->Size = System::Drawing::Size(190, 90);
 			this->botonExp->TabIndex = 24;
-			this->botonExp->Text = L"e^x";
+			this->botonExp->Text = L"eˣ";
 			this->botonExp->UseVisualStyleBackColor = true;
 			this->botonExp->Click += gcnew System::EventHandler(this, &Calculadora::botonExp_Click);
 			// 
@@ -542,7 +542,7 @@ namespace FunTrasGUI {
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(190, 90);
 			this->button10->TabIndex = 30;
-			this->button10->Text = L"x^y";
+			this->button10->Text = L"xʸ";
 			this->button10->UseVisualStyleBackColor = true;
 			// 
 			// button11
@@ -555,7 +555,7 @@ namespace FunTrasGUI {
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(190, 90);
 			this->button11->TabIndex = 29;
-			this->button11->Text = L"logy(x)";
+			this->button11->Text = L"logᵧ(x)";
 			this->button11->UseVisualStyleBackColor = true;
 			// 
 			// button12
@@ -646,7 +646,7 @@ namespace FunTrasGUI {
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(190, 90);
 			this->button20->TabIndex = 38;
-			this->button20->Text = L"cos^-1(x)";
+			this->button20->Text = L"cos⁻¹(x)";
 			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// button21
@@ -659,7 +659,7 @@ namespace FunTrasGUI {
 			this->button21->Name = L"button21";
 			this->button21->Size = System::Drawing::Size(190, 90);
 			this->button21->TabIndex = 37;
-			this->button21->Text = L"tan^-1(x)";
+			this->button21->Text = L"tan⁻¹(x)";
 			this->button21->UseVisualStyleBackColor = true;
 			// 
 			// button22
@@ -672,7 +672,7 @@ namespace FunTrasGUI {
 			this->button22->Name = L"button22";
 			this->button22->Size = System::Drawing::Size(190, 90);
 			this->button22->TabIndex = 36;
-			this->button22->Text = L"sin^-1(x)";
+			this->button22->Text = L"sen⁻¹(x)";
 			this->button22->UseVisualStyleBackColor = true;
 			// 
 			// button23
