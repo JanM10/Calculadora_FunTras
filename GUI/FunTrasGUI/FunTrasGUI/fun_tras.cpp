@@ -7,6 +7,7 @@
 
 
 #include "fun_tras.h"
+using namespace std;
 
 cpp_dec_float_50 fun_tras::eps = 2.2204 * 0.0000000000000001;
 cpp_dec_float_50 fun_tras::tolerancia = 10 * 0.00000001;
@@ -116,6 +117,13 @@ cpp_dec_float_50 fun_tras::get_pi() {
 cpp_dec_float_50 fun_tras::cos_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 total = 0;
     cpp_dec_float_50 sk = 0;
+
+    while (a > 2 * pi_t)
+    {
+        a = a - 2 * pi_t;
+
+    }
+
 
     for (int i = 0; i < max_interacion; ++i) {
         cpp_dec_float_50 denominador = factor_t(2 * i); // se calcula previamente el denominador

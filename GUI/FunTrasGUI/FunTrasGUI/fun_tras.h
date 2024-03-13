@@ -17,8 +17,6 @@
 
 
 using namespace boost::multiprecision;
-using namespace std;
-
 
 
 class fun_tras {
