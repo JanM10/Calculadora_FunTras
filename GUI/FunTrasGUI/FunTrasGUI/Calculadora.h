@@ -513,6 +513,7 @@ namespace FunTrasGUI {
 			this->botonSin->TabIndex = 25;
 			this->botonSin->Text = L"sin(x)";
 			this->botonSin->UseVisualStyleBackColor = true;
+			this->botonSin->Click += gcnew System::EventHandler(this, &Calculadora::botonSin_Click);
 			// 
 			// botonExp
 			// 
@@ -593,6 +594,7 @@ namespace FunTrasGUI {
 			this->botonTan->TabIndex = 27;
 			this->botonTan->Text = L"tan(x)";
 			this->botonTan->UseVisualStyleBackColor = true;
+			this->botonTan->Click += gcnew System::EventHandler(this, &Calculadora::botonTan_Click);
 			// 
 			// button14
 			// 
@@ -916,7 +918,86 @@ private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e
 
 	txtDisplay->Text = ("3.14159265358979323846");
 }
+//Funcion secante
 private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->sec_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion cotangente
+private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->cot_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion cosecante
+private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->csc_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion uno dividido entre X
+private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->divi_t(soloOperation_1);
+
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion euler elevado a la X
+private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->exp_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+// Funcion seno
+private: System::Void botonSin_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->sin_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion coseno
+private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ txtDisplayText = txtDisplay->Text;
+	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	//// Operación y asignación
+	soloOperation_1 = funTras->cos_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+//Funcion tangente
+private: System::Void botonTan_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ txtDisplayText = txtDisplay->Text;
 	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
 	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
@@ -927,32 +1008,5 @@ private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ 
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 
-private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = (1/Math::Tan(soloOperation));
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
-}
-
-private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = (1/Math::Sin(soloOperation));
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
-}
-
-private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = Math::Cos(soloOperation);
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
-}
-private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = (1/soloOperation);
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
-}
-private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ e) {
-	soloOperation = Double::Parse(txtDisplay->Text);
-	soloOperation = Math::Exp(soloOperation);
-	txtDisplay->Text = System::Convert::ToString(soloOperation);
-}
 };
 }

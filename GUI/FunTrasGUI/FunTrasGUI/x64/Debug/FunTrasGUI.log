@@ -1,5 +1,3 @@
-﻿  fun_tras.cpp
-C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\fun_tras.cpp(52,11): warning C4804: '<=': unsafe use of type 'bool' in operation
-C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\fun_tras.cpp(184,27): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+﻿  Calculadora.cpp
   Calculadora.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   FunTrasGUI.vcxproj -> C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\x64\Debug\FunTrasGUI.exe
