@@ -93,25 +93,34 @@ namespace FunTrasGUI {
 
 
 	private: System::Windows::Forms::Button^ boton_divi_t;
+	private: System::Windows::Forms::Button^ botonXy;
 
 
 
-	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Button^ button12;
+
+	private: System::Windows::Forms::Button^ botonLogYX;
+
+	private: System::Windows::Forms::Button^ botonLn;
+
 	private: System::Windows::Forms::Button^ botonTan;
+	private: System::Windows::Forms::Button^ botonRaizX;
 
-	private: System::Windows::Forms::Button^ button14;
+
 	private: System::Windows::Forms::Button^ botonTanh;
 
 	private: System::Windows::Forms::Button^ botonCosh;
 
 	private: System::Windows::Forms::Button^ botonSinh;
+	private: System::Windows::Forms::Button^ botonArcocoseno;
 
-	private: System::Windows::Forms::Button^ button20;
-	private: System::Windows::Forms::Button^ button21;
-	private: System::Windows::Forms::Button^ button22;
-	private: System::Windows::Forms::Button^ button23;
+
+
+	private: System::Windows::Forms::Button^ botonArctan;
+
+	private: System::Windows::Forms::Button^ botonArcoseno;
+
+	private: System::Windows::Forms::Button^ botonYRaizX;
+
 	private: System::Windows::Forms::Button^ botonSec;
 
 	private: System::Windows::Forms::Button^ botonCot;
@@ -161,18 +170,18 @@ namespace FunTrasGUI {
 			this->botonSin = (gcnew System::Windows::Forms::Button());
 			this->botonExp = (gcnew System::Windows::Forms::Button());
 			this->boton_divi_t = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->botonXy = (gcnew System::Windows::Forms::Button());
+			this->botonLogYX = (gcnew System::Windows::Forms::Button());
+			this->botonLn = (gcnew System::Windows::Forms::Button());
 			this->botonTan = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->botonRaizX = (gcnew System::Windows::Forms::Button());
 			this->botonTanh = (gcnew System::Windows::Forms::Button());
 			this->botonCosh = (gcnew System::Windows::Forms::Button());
 			this->botonSinh = (gcnew System::Windows::Forms::Button());
-			this->button20 = (gcnew System::Windows::Forms::Button());
-			this->button21 = (gcnew System::Windows::Forms::Button());
-			this->button22 = (gcnew System::Windows::Forms::Button());
-			this->button23 = (gcnew System::Windows::Forms::Button());
+			this->botonArcocoseno = (gcnew System::Windows::Forms::Button());
+			this->botonArctan = (gcnew System::Windows::Forms::Button());
+			this->botonArcoseno = (gcnew System::Windows::Forms::Button());
+			this->botonYRaizX = (gcnew System::Windows::Forms::Button());
 			this->botonSec = (gcnew System::Windows::Forms::Button());
 			this->botonCot = (gcnew System::Windows::Forms::Button());
 			this->botonCsc = (gcnew System::Windows::Forms::Button());
@@ -543,44 +552,47 @@ namespace FunTrasGUI {
 			this->boton_divi_t->UseVisualStyleBackColor = true;
 			this->boton_divi_t->Click += gcnew System::EventHandler(this, &Calculadora::boton_divi_t_Click);
 			// 
-			// button10
+			// botonXy
 			// 
-			this->button10->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button10->FlatAppearance->BorderSize = 0;
-			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonXy->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonXy->FlatAppearance->BorderSize = 0;
+			this->botonXy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(1193, 509);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(190, 90);
-			this->button10->TabIndex = 30;
-			this->button10->Text = L"xʸ";
-			this->button10->UseVisualStyleBackColor = true;
+			this->botonXy->Location = System::Drawing::Point(1193, 509);
+			this->botonXy->Name = L"botonXy";
+			this->botonXy->Size = System::Drawing::Size(190, 90);
+			this->botonXy->TabIndex = 30;
+			this->botonXy->Text = L"xʸ";
+			this->botonXy->UseVisualStyleBackColor = true;
+			this->botonXy->Click += gcnew System::EventHandler(this, &Calculadora::botonXy_Click);
 			// 
-			// button11
+			// botonLogYX
 			// 
-			this->button11->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button11->FlatAppearance->BorderSize = 0;
-			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonLogYX->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonLogYX->FlatAppearance->BorderSize = 0;
+			this->botonLogYX->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button11->Location = System::Drawing::Point(984, 509);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(190, 90);
-			this->button11->TabIndex = 29;
-			this->button11->Text = L"logᵧ(x)";
-			this->button11->UseVisualStyleBackColor = true;
+			this->botonLogYX->Location = System::Drawing::Point(984, 509);
+			this->botonLogYX->Name = L"botonLogYX";
+			this->botonLogYX->Size = System::Drawing::Size(190, 90);
+			this->botonLogYX->TabIndex = 29;
+			this->botonLogYX->Text = L"logᵧ(x)";
+			this->botonLogYX->UseVisualStyleBackColor = true;
+			this->botonLogYX->Click += gcnew System::EventHandler(this, &Calculadora::botonLogYX_Click);
 			// 
-			// button12
+			// botonLn
 			// 
-			this->button12->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button12->FlatAppearance->BorderSize = 0;
-			this->button12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonLn->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonLn->FlatAppearance->BorderSize = 0;
+			this->botonLn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button12->Location = System::Drawing::Point(772, 508);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(190, 90);
-			this->button12->TabIndex = 28;
-			this->button12->Text = L"ln(x)";
-			this->button12->UseVisualStyleBackColor = true;
+			this->botonLn->Location = System::Drawing::Point(772, 508);
+			this->botonLn->Name = L"botonLn";
+			this->botonLn->Size = System::Drawing::Size(190, 90);
+			this->botonLn->TabIndex = 28;
+			this->botonLn->Text = L"ln(x)";
+			this->botonLn->UseVisualStyleBackColor = true;
+			this->botonLn->Click += gcnew System::EventHandler(this, &Calculadora::botonLn_Click);
 			// 
 			// botonTan
 			// 
@@ -596,18 +608,19 @@ namespace FunTrasGUI {
 			this->botonTan->UseVisualStyleBackColor = true;
 			this->botonTan->Click += gcnew System::EventHandler(this, &Calculadora::botonTan_Click);
 			// 
-			// button14
+			// botonRaizX
 			// 
-			this->button14->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button14->FlatAppearance->BorderSize = 0;
-			this->button14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonRaizX->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonRaizX->FlatAppearance->BorderSize = 0;
+			this->botonRaizX->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button14->Location = System::Drawing::Point(1193, 626);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(190, 90);
-			this->button14->TabIndex = 34;
-			this->button14->Text = L"√x";
-			this->button14->UseVisualStyleBackColor = true;
+			this->botonRaizX->Location = System::Drawing::Point(1193, 626);
+			this->botonRaizX->Name = L"botonRaizX";
+			this->botonRaizX->Size = System::Drawing::Size(190, 90);
+			this->botonRaizX->TabIndex = 34;
+			this->botonRaizX->Text = L"√x";
+			this->botonRaizX->UseVisualStyleBackColor = true;
+			this->botonRaizX->Click += gcnew System::EventHandler(this, &Calculadora::botonRaizX_Click);
 			// 
 			// botonTanh
 			// 
@@ -621,6 +634,7 @@ namespace FunTrasGUI {
 			this->botonTanh->TabIndex = 33;
 			this->botonTanh->Text = L"tanh(x)";
 			this->botonTanh->UseVisualStyleBackColor = true;
+			this->botonTanh->Click += gcnew System::EventHandler(this, &Calculadora::botonTanh_Click);
 			// 
 			// botonCosh
 			// 
@@ -634,6 +648,7 @@ namespace FunTrasGUI {
 			this->botonCosh->TabIndex = 32;
 			this->botonCosh->Text = L"cosh(x)";
 			this->botonCosh->UseVisualStyleBackColor = true;
+			this->botonCosh->Click += gcnew System::EventHandler(this, &Calculadora::botonCosh_Click);
 			// 
 			// botonSinh
 			// 
@@ -647,58 +662,63 @@ namespace FunTrasGUI {
 			this->botonSinh->TabIndex = 31;
 			this->botonSinh->Text = L"sinh(x)";
 			this->botonSinh->UseVisualStyleBackColor = true;
+			this->botonSinh->Click += gcnew System::EventHandler(this, &Calculadora::botonSinh_Click);
 			// 
-			// button20
+			// botonArcocoseno
 			// 
-			this->button20->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button20->FlatAppearance->BorderSize = 0;
-			this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonArcocoseno->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonArcocoseno->FlatAppearance->BorderSize = 0;
+			this->botonArcocoseno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button20->Location = System::Drawing::Point(1193, 743);
-			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(190, 90);
-			this->button20->TabIndex = 38;
-			this->button20->Text = L"cos⁻¹(x)";
-			this->button20->UseVisualStyleBackColor = true;
+			this->botonArcocoseno->Location = System::Drawing::Point(1193, 743);
+			this->botonArcocoseno->Name = L"botonArcocoseno";
+			this->botonArcocoseno->Size = System::Drawing::Size(190, 90);
+			this->botonArcocoseno->TabIndex = 38;
+			this->botonArcocoseno->Text = L"cos⁻¹(x)";
+			this->botonArcocoseno->UseVisualStyleBackColor = true;
+			this->botonArcocoseno->Click += gcnew System::EventHandler(this, &Calculadora::botonArcocoseno_Click);
 			// 
-			// button21
+			// botonArctan
 			// 
-			this->button21->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button21->FlatAppearance->BorderSize = 0;
-			this->button21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonArctan->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonArctan->FlatAppearance->BorderSize = 0;
+			this->botonArctan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button21->Location = System::Drawing::Point(984, 743);
-			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(190, 90);
-			this->button21->TabIndex = 37;
-			this->button21->Text = L"tan⁻¹(x)";
-			this->button21->UseVisualStyleBackColor = true;
+			this->botonArctan->Location = System::Drawing::Point(984, 743);
+			this->botonArctan->Name = L"botonArctan";
+			this->botonArctan->Size = System::Drawing::Size(190, 90);
+			this->botonArctan->TabIndex = 37;
+			this->botonArctan->Text = L"tan⁻¹(x)";
+			this->botonArctan->UseVisualStyleBackColor = true;
+			this->botonArctan->Click += gcnew System::EventHandler(this, &Calculadora::botonArctan_Click);
 			// 
-			// button22
+			// botonArcoseno
 			// 
-			this->button22->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button22->FlatAppearance->BorderSize = 0;
-			this->button22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonArcoseno->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonArcoseno->FlatAppearance->BorderSize = 0;
+			this->botonArcoseno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button22->Location = System::Drawing::Point(772, 742);
-			this->button22->Name = L"button22";
-			this->button22->Size = System::Drawing::Size(190, 90);
-			this->button22->TabIndex = 36;
-			this->button22->Text = L"sen⁻¹(x)";
-			this->button22->UseVisualStyleBackColor = true;
+			this->botonArcoseno->Location = System::Drawing::Point(772, 742);
+			this->botonArcoseno->Name = L"botonArcoseno";
+			this->botonArcoseno->Size = System::Drawing::Size(190, 90);
+			this->botonArcoseno->TabIndex = 36;
+			this->botonArcoseno->Text = L"sen⁻¹(x)";
+			this->botonArcoseno->UseVisualStyleBackColor = true;
+			this->botonArcoseno->Click += gcnew System::EventHandler(this, &Calculadora::botonArcoseno_Click);
 			// 
-			// button23
+			// botonYRaizX
 			// 
-			this->button23->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->button23->FlatAppearance->BorderSize = 0;
-			this->button23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->botonYRaizX->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonYRaizX->FlatAppearance->BorderSize = 0;
+			this->botonYRaizX->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button23->Location = System::Drawing::Point(563, 741);
-			this->button23->Name = L"button23";
-			this->button23->Size = System::Drawing::Size(190, 90);
-			this->button23->TabIndex = 35;
-			this->button23->Text = L"y√x";
-			this->button23->UseVisualStyleBackColor = true;
+			this->botonYRaizX->Location = System::Drawing::Point(563, 741);
+			this->botonYRaizX->Name = L"botonYRaizX";
+			this->botonYRaizX->Size = System::Drawing::Size(190, 90);
+			this->botonYRaizX->TabIndex = 35;
+			this->botonYRaizX->Text = L"y√x";
+			this->botonYRaizX->UseVisualStyleBackColor = true;
+			this->botonYRaizX->Click += gcnew System::EventHandler(this, &Calculadora::botonYRaizX_Click);
 			// 
 			// botonSec
 			// 
@@ -751,17 +771,17 @@ namespace FunTrasGUI {
 			this->Controls->Add(this->botonCsc);
 			this->Controls->Add(this->botonCot);
 			this->Controls->Add(this->botonSec);
-			this->Controls->Add(this->button20);
-			this->Controls->Add(this->button21);
-			this->Controls->Add(this->button22);
-			this->Controls->Add(this->button23);
-			this->Controls->Add(this->button14);
+			this->Controls->Add(this->botonArcocoseno);
+			this->Controls->Add(this->botonArctan);
+			this->Controls->Add(this->botonArcoseno);
+			this->Controls->Add(this->botonYRaizX);
+			this->Controls->Add(this->botonRaizX);
 			this->Controls->Add(this->botonTanh);
 			this->Controls->Add(this->botonCosh);
 			this->Controls->Add(this->botonSinh);
-			this->Controls->Add(this->button10);
-			this->Controls->Add(this->button11);
-			this->Controls->Add(this->button12);
+			this->Controls->Add(this->botonXy);
+			this->Controls->Add(this->botonLogYX);
+			this->Controls->Add(this->botonLn);
 			this->Controls->Add(this->botonTan);
 			this->Controls->Add(this->botonCos);
 			this->Controls->Add(this->botonSin);
@@ -802,6 +822,13 @@ namespace FunTrasGUI {
 		fun_tras* funTras = new fun_tras();
 		typedef number<cpp_dec_float<50>> cpp_dec_float_50;
 		cpp_dec_float_50* soloOperation_1;
+
+	private: cpp_dec_float_50 float_50_parser() {
+		String^ txtDisplayText = txtDisplay->Text;
+		std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
+		cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+		return soloOperation_1;
+	}
 
 	private: System::Void Calculadora_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -920,9 +947,9 @@ private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e
 }
 //Funcion secante
 private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+
 	//// Operación y asignación
 	soloOperation_1 = funTras->sec_t(soloOperation_1);
 
@@ -931,9 +958,7 @@ private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ 
 }
 //Funcion cotangente
 private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->cot_t(soloOperation_1);
 
@@ -942,9 +967,7 @@ private: System::Void botonCot_Click(System::Object^ sender, System::EventArgs^ 
 }
 //Funcion cosecante
 private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->csc_t(soloOperation_1);
 
@@ -953,9 +976,7 @@ private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ 
 }
 //Funcion uno dividido entre X
 private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->divi_t(soloOperation_1);
 
@@ -965,9 +986,7 @@ private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventAr
 }
 //Funcion euler elevado a la X
 private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->exp_t(soloOperation_1);
 
@@ -976,9 +995,7 @@ private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ 
 }
 // Funcion seno
 private: System::Void botonSin_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->sin_t(soloOperation_1);
 
@@ -987,9 +1004,7 @@ private: System::Void botonSin_Click(System::Object^ sender, System::EventArgs^ 
 }
 //Funcion coseno
 private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->cos_t(soloOperation_1);
 
@@ -998,9 +1013,7 @@ private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ 
 }
 //Funcion tangente
 private: System::Void botonTan_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ txtDisplayText = txtDisplay->Text;
-	std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
-	cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
 	soloOperation_1 = funTras->cos_t(soloOperation_1);
 
@@ -1008,5 +1021,87 @@ private: System::Void botonTan_Click(System::Object^ sender, System::EventArgs^ 
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 
+private: System::Void botonLn_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación	
+	soloOperation_1 = funTras->ln_t(soloOperation_1.convert_to<float>());
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+	   //ESTA FUNCION TIENE PROBLEMAS
+private: System::Void botonLogYX_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->log_t(firstDigit, secondDigit);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+
+private: System::Void botonXy_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void botonSinh_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->sinh_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void botonCosh_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->cosh_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void botonTanh_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->tanh_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void botonRaizX_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->sqrt_t(soloOperation_1.convert_to<float>());
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+	   //FALTA ESTA FUNCION
+private: System::Void botonYRaizX_Click(System::Object^ sender, System::EventArgs^ e) {
+	//FALTA ESTA FUNCION
+}
+
+private: System::Void botonArcoseno_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->asin_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void botonArctan_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->atan_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void botonArcocoseno_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	//// Operación y asignación
+	soloOperation_1 = funTras->acos_t(soloOperation_1);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
 };
 }

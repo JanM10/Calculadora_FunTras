@@ -1,3 +1,9 @@
 ﻿  Calculadora.cpp
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1036,47): warning C4244: 'argument': conversion from 'double' to 'long', possible loss of data
+  (compiling source file 'Calculadora.cpp')
+  
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1036,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Calculadora.cpp')
+  
   Calculadora.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  FunTrasGUI.vcxproj -> C:\Users\jmars\OneDrive\Documentos\GitHub\Calculadora_FunTras\GUI\FunTrasGUI\x64\Debug\FunTrasGUI.exe
+  FunTrasGUI.vcxproj -> C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\x64\Debug\FunTrasGUI.exe
