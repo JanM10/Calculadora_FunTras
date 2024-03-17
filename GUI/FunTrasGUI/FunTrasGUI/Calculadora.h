@@ -1015,7 +1015,7 @@ private: System::Void botonCos_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void botonTan_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
 	//// Operación y asignación
-	soloOperation_1 = funTras->cos_t(soloOperation_1);
+	soloOperation_1 = funTras->tan_t(soloOperation_1);
 
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());

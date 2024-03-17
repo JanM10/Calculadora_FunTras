@@ -49,7 +49,7 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
 
 
     // se define los posibles valores de x0 segun el valor de a(la entrada)
-    if (0 < a_entero <= fact_20) {
+    if (0 < a_entero && a_entero <= fact_20) {
         x0 = pow(eps, 2);
     }
     else if (a_entero <= fact_40) {
@@ -94,6 +94,14 @@ cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
 cpp_dec_float_50 fun_tras::sin_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 total = 0;
     cpp_dec_float_50 sk = 0;
+
+    while (a > 2 * pi_t)
+    {
+        a = a - 2 * pi_t;
+
+    }
+
+
     for (int i = 0; i < max_interacion; ++i) {
         cpp_dec_float_50 denominador = factor_t(2 * i + 1); // calculo (2n+1)! antes, este numero se usa como denominador
         total += (i % 2 == 0 ? 1 : -1) * pow(a, 2 * i + 1) * divi_t(denominador);  // NOTA:(i % 2==0 ? 1:-1); consulta si i es par o impar
@@ -140,7 +148,8 @@ cpp_dec_float_50 fun_tras::cos_t(cpp_dec_float_50 a) {
 }
 
 cpp_dec_float_50 fun_tras::tan_t(boost::multiprecision::cpp_dec_float_50 a) { // si se usa un k*pi/2, esto tiende a infinito
-    return sin_t(a) * divi_t(cos_t(a));
+ 
+    return sin_t(a) * sec_t(a);
 }
 
 cpp_dec_float_50 fun_tras::ln_t(float a) {
@@ -230,13 +239,18 @@ cpp_dec_float_50 fun_tras::tanh_t(cpp_dec_float_50 a) {
 cpp_dec_float_50 fun_tras::asin_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 total = 0;
     cpp_dec_float_50 sk = 0;
+
     for (int i = 0; i < max_interacion; ++i) {
-        cpp_dec_float_50 denominador = pow(4, i) * pow(factor_t(i), 2) * (2 * i + 1);
-        total += factor_t(2 * i) * pow(a, 2 * i + 1) * divi_t(denominador);
+        //cpp_dec_float_50 factor = factor_t(i);
+        cpp_dec_float_50 denominador = factor_t(i)*factor_t(i) * (2 * i + 1);
+        cpp_dec_float_50 pow_ = pow(a,2*i+1);
+        total += pow_*factor_t(2 * i)  * divi_t(denominador)*divi_t(pow(4,i));
+
 
         if (abs(total - sk) < tolerancia) { // condicion de parada
             break;
         }
+
 
         sk = total;
     }
@@ -258,7 +272,7 @@ cpp_dec_float_50 fun_tras::atan_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 total = 0;
     cpp_dec_float_50 sk = 0;
     cpp_dec_float_50 denominador = 0;
-    if (-1 < a && a < 1) {
+    if (-1 <= a && a <= 1) {
         for (int i = 0; i < max_interacion; ++i) {
             total += (i % 2 == 0 ? 1 : -1) * pow(a, 2 * i + 1) * divi_t(2 * i + 1);
             if (abs(total - sk) < tolerancia) { // condicion de parada
