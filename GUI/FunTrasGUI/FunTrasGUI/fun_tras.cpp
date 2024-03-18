@@ -17,7 +17,7 @@ double fun_tras::fact_20;
 double fun_tras::fact_40;
 double fun_tras::fact_60;
 double fun_tras::fact_80;
-double fun_tras::fact_100;
+cpp_dec_float_50 fun_tras::fact_100;
 
 fun_tras::fun_tras() { //constructor
 
@@ -27,7 +27,7 @@ fun_tras::fun_tras() { //constructor
     fact_40 = boost::math::factorial<double>(40);
     fact_60 = boost::math::factorial<double>(60);
     fact_80 = boost::math::factorial<double>(80);
-    fact_100 = boost::math::factorial<double>(100);
+    fact_100 = factor_t(100);
 }
 
 fun_tras::~fun_tras() { //destrcutor
@@ -43,7 +43,7 @@ cpp_dec_float_50 fun_tras::factor_t(long a) { // al implementarse por iteracion 
 
 cpp_dec_float_50 fun_tras::divi_t(cpp_dec_float_50 a) {
     cpp_dec_float_50 x0 = 0;
-    int a_entero = abs(static_cast<int>(a));
+    cpp_dec_float_50 a_entero = abs(a);
 
     // PENDIENTE DE ANALIZAR EL CASO DE LOS NEGATIVOS
 
@@ -242,9 +242,9 @@ cpp_dec_float_50 fun_tras::asin_t(cpp_dec_float_50 a) {
 
     for (int i = 0; i < max_interacion; ++i) {
         //cpp_dec_float_50 factor = factor_t(i);
-        cpp_dec_float_50 denominador = factor_t(i)*factor_t(i) * (2 * i + 1);
+        cpp_dec_float_50 denominador = divi_t(pow(4,i)*factor_t(i)*factor_t(i) * (2 * i + 1));
         cpp_dec_float_50 pow_ = pow(a,2*i+1);
-        total += pow_*factor_t(2 * i)  * divi_t(denominador)*divi_t(pow(4,i));
+        total += pow_*factor_t(2 * i) * denominador;
 
 
         if (abs(total - sk) < tolerancia) { // condicion de parada

@@ -57,7 +57,7 @@ private:
     static double fact_40;
     static double fact_60;
     static double fact_80;
-    static double fact_100;
+    static cpp_dec_float_50 fact_100;
 };
 
 
