@@ -79,7 +79,7 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ botonPI;
 
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ botonC;
+
 	private: System::Windows::Forms::Button^ botonCE;
 
 
@@ -126,6 +126,15 @@ namespace FunTrasGUI {
 	private: System::Windows::Forms::Button^ botonCot;
 	private: System::Windows::Forms::Button^ botonCsc;
 private: System::Windows::Forms::Label^ lblShowOp;
+private: System::Windows::Forms::TextBox^ entradaX;
+private: System::Windows::Forms::TextBox^ entradaY;
+
+
+private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ label3;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Button^ botonXfactorial;
 
 
 
@@ -164,7 +173,6 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->botonPI = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->botonC = (gcnew System::Windows::Forms::Button());
 			this->botonCE = (gcnew System::Windows::Forms::Button());
 			this->botonMasMenos = (gcnew System::Windows::Forms::Button());
 			this->botonBorrar = (gcnew System::Windows::Forms::Button());
@@ -188,17 +196,24 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->botonCot = (gcnew System::Windows::Forms::Button());
 			this->botonCsc = (gcnew System::Windows::Forms::Button());
 			this->lblShowOp = (gcnew System::Windows::Forms::Label());
+			this->entradaX = (gcnew System::Windows::Forms::TextBox());
+			this->entradaY = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->botonXfactorial = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
 			// 
-			this->txtDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txtDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 28, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtDisplay->Location = System::Drawing::Point(29, 31);
+			this->txtDisplay->Location = System::Drawing::Point(772, 31);
 			this->txtDisplay->Multiline = true;
 			this->txtDisplay->Name = L"txtDisplay";
 			this->txtDisplay->ReadOnly = true;
-			this->txtDisplay->Size = System::Drawing::Size(1354, 80);
+			this->txtDisplay->Size = System::Drawing::Size(611, 80);
 			this->txtDisplay->TabIndex = 1;
 			this->txtDisplay->Text = L"0";
 			this->txtDisplay->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
@@ -443,20 +458,6 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
-			// botonC
-			// 
-			this->botonC->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-			this->botonC->FlatAppearance->BorderSize = 0;
-			this->botonC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->botonC->Location = System::Drawing::Point(290, 273);
-			this->botonC->Name = L"botonC";
-			this->botonC->Size = System::Drawing::Size(120, 90);
-			this->botonC->TabIndex = 20;
-			this->botonC->Text = L"C";
-			this->botonC->UseVisualStyleBackColor = true;
-			this->botonC->Click += gcnew System::EventHandler(this, &Calculadora::botonC_Click);
-			// 
 			// botonCE
 			// 
 			this->botonCE->FlatAppearance->BorderColor = System::Drawing::Color::Black;
@@ -491,9 +492,9 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->botonBorrar->FlatAppearance->BorderSize = 0;
 			this->botonBorrar->Font = (gcnew System::Drawing::Font(L"Wingdings", 22, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(2)));
-			this->botonBorrar->Location = System::Drawing::Point(563, 273);
+			this->botonBorrar->Location = System::Drawing::Point(290, 273);
 			this->botonBorrar->Name = L"botonBorrar";
-			this->botonBorrar->Size = System::Drawing::Size(190, 90);
+			this->botonBorrar->Size = System::Drawing::Size(120, 90);
 			this->botonBorrar->TabIndex = 22;
 			this->botonBorrar->Text = L"";
 			this->botonBorrar->UseVisualStyleBackColor = true;
@@ -775,7 +776,92 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->lblShowOp->Name = L"lblShowOp";
 			this->lblShowOp->Size = System::Drawing::Size(0, 37);
 			this->lblShowOp->TabIndex = 42;
-			this->lblShowOp->Click += gcnew System::EventHandler(this, &Calculadora::label1_Click);
+			// 
+			// entradaX
+			// 
+			this->entradaX->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->entradaX->Location = System::Drawing::Point(142, 31);
+			this->entradaX->Multiline = true;
+			this->entradaX->Name = L"entradaX";
+			this->entradaX->ReadOnly = true;
+			this->entradaX->Size = System::Drawing::Size(399, 80);
+			this->entradaX->TabIndex = 43;
+			this->entradaX->Text = L"0";
+			this->entradaX->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->entradaX->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &Calculadora::entradaActualX);
+			// 
+			// entradaY
+			// 
+			this->entradaY->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->entradaY->Location = System::Drawing::Point(142, 149);
+			this->entradaY->Multiline = true;
+			this->entradaY->Name = L"entradaY";
+			this->entradaY->ReadOnly = true;
+			this->entradaY->Size = System::Drawing::Size(399, 80);
+			this->entradaY->TabIndex = 44;
+			this->entradaY->Text = L"0";
+			this->entradaY->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->entradaY->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &Calculadora::entradaActualY);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(49, 41);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(70, 46);
+			this->label1->TabIndex = 45;
+			this->label1->Text = L"X=";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(50, 161);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(69, 46);
+			this->label2->TabIndex = 46;
+			this->label2->Text = L"Y=";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(579, 49);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(187, 37);
+			this->label3->TabIndex = 47;
+			this->label3->Text = L"Respuesta=";
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(1193, 161);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(190, 56);
+			this->button2->TabIndex = 48;
+			this->button2->Text = L"AYUDA";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// botonXfactorial
+			// 
+			this->botonXfactorial->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->botonXfactorial->FlatAppearance->BorderSize = 0;
+			this->botonXfactorial->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->botonXfactorial->Location = System::Drawing::Point(563, 275);
+			this->botonXfactorial->Name = L"botonXfactorial";
+			this->botonXfactorial->Size = System::Drawing::Size(190, 90);
+			this->botonXfactorial->TabIndex = 49;
+			this->botonXfactorial->Text = L"x!";
+			this->botonXfactorial->UseVisualStyleBackColor = true;
+			this->botonXfactorial->Click += gcnew System::EventHandler(this, &Calculadora::botonXfactorial_Click);
 			// 
 			// Calculadora
 			// 
@@ -783,6 +869,13 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Teal;
 			this->ClientSize = System::Drawing::Size(1411, 852);
+			this->Controls->Add(this->botonXfactorial);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->entradaY);
+			this->Controls->Add(this->entradaX);
 			this->Controls->Add(this->lblShowOp);
 			this->Controls->Add(this->botonCsc);
 			this->Controls->Add(this->botonCot);
@@ -805,7 +898,6 @@ private: System::Windows::Forms::Label^ lblShowOp;
 			this->Controls->Add(this->boton_divi_t);
 			this->Controls->Add(this->botonBorrar);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->botonC);
 			this->Controls->Add(this->botonCE);
 			this->Controls->Add(this->botonMasMenos);
 			this->Controls->Add(this->botonResultado);
@@ -833,6 +925,7 @@ private: System::Windows::Forms::Label^ lblShowOp;
 
 		}
 #pragma endregion
+		bool entrada_acutal_x = false, entrada_acutal_y = false;
 		double firstDigit, secondDigit, soloOperation, result;
 		String^ operators;
 		fun_tras* funTras = new fun_tras();
@@ -867,10 +960,12 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 	if (txtDisplay->Text == "0")
 	{
 		txtDisplay->Text = Numbers->Text;
+		//entradaX->Text = Numbers->Text;
 	}
 	else
 	{
 		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
+		//entradaX->Text = entradaX->Text + Numbers->Text;
 	}
 }
 private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
@@ -946,14 +1041,9 @@ private: System::Void botonResultado_Click(System::Object^ sender, System::Event
 	}
 
 	else {
+		//CAMBIAR ESTO POR UN ERROR DE VERDAD
 		txtDisplay->Text = "Esto no sirve :D";
 	}
-
-}
-private: System::Void botonC_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	txtDisplay->Text = "0";
-
 }
 private: System::Void botonMasMenos_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -987,6 +1077,9 @@ private: System::Void botonCE_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	txtDisplay->Text = ("3.14159265358979323846");
+	////////////////////////////
+	//UTILIZAR LA FUNCION get_pi
+	////////////////////////////
 }
 //Funcion secante
 private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1146,7 +1239,32 @@ private: System::Void botonArcocoseno_Click(System::Object^ sender, System::Even
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void botonXfactorial_Click(System::Object^ sender, System::EventArgs^ e) {
+	cpp_dec_float_50 soloOperation_1 = float_50_parser();
+	long soloOperationLong = soloOperation_1.convert_to<long>();
+	//// Operación y asignación
+	soloOperation_1 = funTras->factor_t(soloOperationLong);
+
+	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
+	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void entradaActualX(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	entrada_acutal_x = true;
+	entrada_acutal_y = false;
+	if (entrada_acutal_x)
+	{
+		entradaX->Text ="Actual";
+		entradaY->Text = "No";
+	}
+}
+private: System::Void entradaActualY(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	entrada_acutal_x = false;
+	entrada_acutal_y = true;
+	if (entrada_acutal_y)
+	{
+		entradaX->Text = "No";
+		entradaY->Text = "Actual";
+	}
 }
 };
 }
