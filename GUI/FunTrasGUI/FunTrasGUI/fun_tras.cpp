@@ -316,7 +316,7 @@ cpp_dec_float_50 fun_tras::sqrt_t(float a) {
 
 cpp_dec_float_50 fun_tras::root_t(float x, float y) {
     if (y != static_cast<int>(y) || static_cast<int>(y) % 2 != 0) {
-        cout << "aqui" << endl;
+        //cout << "aqui" << endl;
         return power_t(x, 1 / y);
     }
     else {

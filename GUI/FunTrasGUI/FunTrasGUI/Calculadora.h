@@ -125,6 +125,8 @@ namespace FunTrasGUI {
 
 	private: System::Windows::Forms::Button^ botonCot;
 	private: System::Windows::Forms::Button^ botonCsc;
+private: System::Windows::Forms::Label^ lblShowOp;
+
 
 
 
@@ -185,6 +187,7 @@ namespace FunTrasGUI {
 			this->botonSec = (gcnew System::Windows::Forms::Button());
 			this->botonCot = (gcnew System::Windows::Forms::Button());
 			this->botonCsc = (gcnew System::Windows::Forms::Button());
+			this->lblShowOp = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
@@ -562,9 +565,9 @@ namespace FunTrasGUI {
 			this->botonXy->Name = L"botonXy";
 			this->botonXy->Size = System::Drawing::Size(190, 90);
 			this->botonXy->TabIndex = 30;
-			this->botonXy->Text = L"xʸ";
+			this->botonXy->Text = L"x^y";
 			this->botonXy->UseVisualStyleBackColor = true;
-			this->botonXy->Click += gcnew System::EventHandler(this, &Calculadora::botonXy_Click);
+			this->botonXy->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// botonLogYX
 			// 
@@ -716,9 +719,9 @@ namespace FunTrasGUI {
 			this->botonYRaizX->Name = L"botonYRaizX";
 			this->botonYRaizX->Size = System::Drawing::Size(190, 90);
 			this->botonYRaizX->TabIndex = 35;
-			this->botonYRaizX->Text = L"y√x";
+			this->botonYRaizX->Text = L"yRx";
 			this->botonYRaizX->UseVisualStyleBackColor = true;
-			this->botonYRaizX->Click += gcnew System::EventHandler(this, &Calculadora::botonYRaizX_Click);
+			this->botonYRaizX->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// botonSec
 			// 
@@ -762,12 +765,25 @@ namespace FunTrasGUI {
 			this->botonCsc->UseVisualStyleBackColor = true;
 			this->botonCsc->Click += gcnew System::EventHandler(this, &Calculadora::botonCsc_Click);
 			// 
+			// lblShowOp
+			// 
+			this->lblShowOp->AutoSize = true;
+			this->lblShowOp->BackColor = System::Drawing::SystemColors::Control;
+			this->lblShowOp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblShowOp->Location = System::Drawing::Point(43, 41);
+			this->lblShowOp->Name = L"lblShowOp";
+			this->lblShowOp->Size = System::Drawing::Size(0, 37);
+			this->lblShowOp->TabIndex = 42;
+			this->lblShowOp->Click += gcnew System::EventHandler(this, &Calculadora::label1_Click);
+			// 
 			// Calculadora
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Teal;
 			this->ClientSize = System::Drawing::Size(1411, 852);
+			this->Controls->Add(this->lblShowOp);
 			this->Controls->Add(this->botonCsc);
 			this->Controls->Add(this->botonCot);
 			this->Controls->Add(this->botonSec);
@@ -877,14 +893,35 @@ private: System::Void botonDecimal_Click(System::Object^ sender, System::EventAr
 }
 
 private: System::Void botonResultado_Click(System::Object^ sender, System::EventArgs^ e) {
+	lblShowOp->Text = "";
 	String^ cadenaReemplazada = (txtDisplay->Text)->Replace(".", ",");
 	secondDigit = Double::Parse(cadenaReemplazada);
+	//bool respuesta = false;
+	//respuesta = operators == "y√x";
 
 	// Se aplica el operador de suma
 	if (operators == "+")
 	{
 		result = firstDigit + secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
+	}
+
+	// Se aplica el operador de raiz y√x
+	else if (operators == "yRx")
+	{
+		cpp_dec_float_50 result = float_50_parser();
+		result = funTras->root_t(secondDigit, firstDigit);
+		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
+		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
+	}
+
+	// Se aplica el operador de raiz y√x
+	else if (operators == "x^y")
+	{
+		cpp_dec_float_50 result = float_50_parser();
+		result = funTras->power_t(firstDigit, secondDigit);
+		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
+		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 	// Se aplica el operador de resta
@@ -906,6 +943,10 @@ private: System::Void botonResultado_Click(System::Object^ sender, System::Event
 	{
 		result = firstDigit / secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
+	}
+
+	else {
+		txtDisplay->Text = "Esto no sirve :D";
 	}
 
 }
@@ -936,9 +977,11 @@ private: System::Void botonBorrar_Click(System::Object^ sender, System::EventArg
 
 }
 
+
 private: System::Void botonCE_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	txtDisplay->Clear();
+	txtDisplay->Text = "0";
 
 }
 private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1039,8 +1082,7 @@ private: System::Void botonLogYX_Click(System::Object^ sender, System::EventArgs
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 
-private: System::Void botonXy_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 
 private: System::Void botonSinh_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1075,9 +1117,10 @@ private: System::Void botonRaizX_Click(System::Object^ sender, System::EventArgs
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
 	   //FALTA ESTA FUNCION
-private: System::Void botonYRaizX_Click(System::Object^ sender, System::EventArgs^ e) {
-	//FALTA ESTA FUNCION
-}
+//private: System::Void botonYRaizX_Click(System::Object^ sender, System::EventArgs^ e) {
+//	//FALTA ESTA FUNCION
+//	//lblShowOp->Text = System::Convert::ToString(firstDigit) + " " + "√" + operators;
+//}
 
 private: System::Void botonArcoseno_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1102,6 +1145,8 @@ private: System::Void botonArcocoseno_Click(System::Object^ sender, System::Even
 
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

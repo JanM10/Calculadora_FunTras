@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "FunTrasGUI\\fun_tras.cpp",
               "ToolTip": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\fun_tras.cpp",
               "RelativeToolTip": "FunTrasGUI\\fun_tras.cpp",
-              "ViewState": "AQIAABIBAAAAAAAAAAAIwCQBAAAhAAAA",
+              "ViewState": "AQIAAPUAAAAAAAAAAAAIwAoBAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-12T01:11:21.249Z",
               "EditorCaption": ""
@@ -64,19 +64,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Calculadora.h",
-              "DocumentMoniker": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
-              "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
-              "ToolTip": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
-              "RelativeToolTip": "FunTrasGUI\\Calculadora.h",
-              "ViewState": "AQIAACQEAAAAAAAAAAAUwD4EAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-01T04:53:53.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Calculadora.cpp",
               "DocumentMoniker": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.cpp",
@@ -85,7 +72,21 @@
               "RelativeToolTip": "FunTrasGUI\\Calculadora.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-01T04:41:25.321Z"
+              "WhenOpened": "2024-03-01T04:41:25.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calculadora.h",
+              "DocumentMoniker": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
+              "RelativeDocumentMoniker": "FunTrasGUI\\Calculadora.h",
+              "ToolTip": "C:\\Users\\jmars\\Documents\\GitHub\\Calcu_Funtras\\Calculadora_FunTras\\GUI\\FunTrasGUI\\FunTrasGUI\\Calculadora.h",
+              "RelativeToolTip": "FunTrasGUI\\Calculadora.h",
+              "ViewState": "AQIAAH4DAAAAAAAAAAAIwJsDAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-01T04:53:53.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
