@@ -7,6 +7,7 @@
 #include <msclr/marshal_cppstd.h> // Para la conversión de String^ a std::string
 #include <msclr/marshal.h>
 #include "fun_tras.h"
+#include "VentanaAyuda.h"
 
 
 namespace FunTrasGUI {
@@ -848,6 +849,7 @@ private: System::Windows::Forms::Button^ botonXfactorial;
 			this->button2->TabIndex = 48;
 			this->button2->Text = L"AYUDA";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Calculadora::botonAyuda);
 			// 
 			// botonXfactorial
 			// 
@@ -1316,20 +1318,14 @@ private: System::Void botonXfactorial_Click(System::Object^ sender, System::Even
 private: System::Void entradaActualX(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	entrada_acutal_x = true;
 	entrada_acutal_y = false;
-	/*if (entrada_acutal_x)
-	{
-		entradaX->Text ="Actual";
-		entradaY->Text = "No";
-	}*/
 }
 private: System::Void entradaActualY(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	entrada_acutal_x = false;
 	entrada_acutal_y = true;
-	/*if (entrada_acutal_y)
-	{
-		entradaX->Text = "No";
-		entradaY->Text = "Actual";
-	}*/
+}
+private: System::Void botonAyuda(System::Object^ sender, System::EventArgs^ e) {
+	VentanaAyuda obj;
+	obj.ShowDialog();
 }
 };
 }

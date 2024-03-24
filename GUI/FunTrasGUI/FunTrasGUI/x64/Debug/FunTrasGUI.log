@@ -1,21 +1,23 @@
 ﻿  Calculadora.cpp
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1061,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1063,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1061,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1063,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1070,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1072,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1070,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1072,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1080,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1082,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
-C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1080,27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\FunTrasGUI\Calculadora.h(1082,27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Calculadora.cpp')
   
+  VentanaAyuda.cpp
+  Generating Code...
   Calculadora.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   FunTrasGUI.vcxproj -> C:\Users\jmars\Documents\GitHub\Calcu_Funtras\Calculadora_FunTras\GUI\FunTrasGUI\x64\Debug\FunTrasGUI.exe

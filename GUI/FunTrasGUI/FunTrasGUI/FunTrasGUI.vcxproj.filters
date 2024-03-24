@@ -21,12 +21,18 @@
     <ClCompile Include="fun_tras.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VentanaAyuda.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculadora.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fun_tras.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VentanaAyuda.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
