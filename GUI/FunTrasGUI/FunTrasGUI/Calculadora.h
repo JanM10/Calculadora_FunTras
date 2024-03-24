@@ -580,9 +580,9 @@ private: System::Windows::Forms::Button^ botonXfactorial;
 			this->botonLogYX->Name = L"botonLogYX";
 			this->botonLogYX->Size = System::Drawing::Size(190, 90);
 			this->botonLogYX->TabIndex = 29;
-			this->botonLogYX->Text = L"logᵧ(x)";
+			this->botonLogYX->Text = L"logy(x)";
 			this->botonLogYX->UseVisualStyleBackColor = true;
-			this->botonLogYX->Click += gcnew System::EventHandler(this, &Calculadora::botonLogYX_Click);
+			this->botonLogYX->Click += gcnew System::EventHandler(this, &Calculadora::EnterOperator);
 			// 
 			// botonLn
 			// 
@@ -931,9 +931,10 @@ private: System::Windows::Forms::Button^ botonXfactorial;
 		fun_tras* funTras = new fun_tras();
 		typedef number<cpp_dec_float<50>> cpp_dec_float_50;
 		cpp_dec_float_50* soloOperation_1;
+		double pi_t = 3.14159265358979323846;
 
 	private: cpp_dec_float_50 float_50_parser() {
-		String^ txtDisplayText = txtDisplay->Text;
+		String^ txtDisplayText = entradaX->Text;
 		std::string soloOperationStr = marshal_as<std::string>(txtDisplayText);
 		cpp_dec_float_50 soloOperation_1 = boost::lexical_cast<cpp_dec_float_50>(soloOperationStr);
 		return soloOperation_1;
@@ -956,22 +957,37 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
 
 	Button^ Numbers = safe_cast<Button^>(sender);
-
-	if (txtDisplay->Text == "0")
+	if (entrada_acutal_x)
 	{
-		txtDisplay->Text = Numbers->Text;
-		//entradaX->Text = Numbers->Text;
+		if (entradaX->Text == "0")
+		{
+			//txtDisplay->Text = Numbers->Text;
+			entradaX->Text = Numbers->Text;
+		}
+		else
+		{
+			//txtDisplay->Text = txtDisplay->Text + Numbers->Text;
+			entradaX->Text = entradaX->Text + Numbers->Text;
+		}
 	}
-	else
+	else if(entrada_acutal_y)
 	{
-		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
-		//entradaX->Text = entradaX->Text + Numbers->Text;
+		if (entradaY->Text == "0")
+		{
+			//txtDisplay->Text = Numbers->Text;
+			entradaY->Text = Numbers->Text;
+		}
+		else
+		{
+			//txtDisplay->Text = txtDisplay->Text + Numbers->Text;
+			entradaY->Text = entradaY->Text + Numbers->Text;
+		}
 	}
 }
 private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
 
 	Button^ NumbersOp = safe_cast<Button^>(sender);
-	String^ cadenaReemplazada = (txtDisplay->Text)->Replace(".", ",");
+	String^ cadenaReemplazada = (entradaX->Text)->Replace(".", ",");
 	firstDigit = Double::Parse(cadenaReemplazada);
 	//double firstDigit = System::Convert::ToDouble(cadenaReemplazada);
 
@@ -981,42 +997,40 @@ private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e
 	  
 private: System::Void botonDecimal_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Existe un error que no deja utilizar "." a la hora de hacer el Parse por ende se usa ","
-	if (!txtDisplay->Text->Contains("."))
+
+	if (entrada_acutal_x)
 	{
-		txtDisplay->Text = txtDisplay->Text + ".";
+		if (!entradaX->Text->Contains("."))
+		{
+			entradaX->Text = entradaX->Text + ".";
+		}
 	}
+	else if (entrada_acutal_y)
+	{
+		if (!entradaY->Text->Contains("."))
+		{
+			entradaY->Text = entradaY->Text + ".";
+		}
+	}
+
 }
 
 private: System::Void botonResultado_Click(System::Object^ sender, System::EventArgs^ e) {
-	lblShowOp->Text = "";
-	String^ cadenaReemplazada = (txtDisplay->Text)->Replace(".", ",");
+	String^ cadenaReemplazada = (entradaY->Text)->Replace(".", ",");
 	secondDigit = Double::Parse(cadenaReemplazada);
-	//bool respuesta = false;
-	//respuesta = operators == "y√x";
 
 	// Se aplica el operador de suma
 	if (operators == "+")
 	{
+		/*String^ txtDisplayX = entradaX->Text->Replace(".", ",");
+		double numero_X = System::Double::Parse(txtDisplayX);
+
+		String^ txtDisplayY = entradaY->Text->Replace(".", ",");
+		double numero_Y = System::Double::Parse(txtDisplayY);*/
+		//////////
+		//////////
 		result = firstDigit + secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
-	}
-
-	// Se aplica el operador de raiz y√x
-	else if (operators == "yRx")
-	{
-		cpp_dec_float_50 result = float_50_parser();
-		result = funTras->root_t(secondDigit, firstDigit);
-		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
-		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
-	}
-
-	// Se aplica el operador de raiz y√x
-	else if (operators == "x^y")
-	{
-		cpp_dec_float_50 result = float_50_parser();
-		result = funTras->power_t(firstDigit, secondDigit);
-		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
-		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
 	// Se aplica el operador de resta
@@ -1040,31 +1054,86 @@ private: System::Void botonResultado_Click(System::Object^ sender, System::Event
 		txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
 	}
 
+	// Se aplica el operador de raiz y√x
+	else if (operators == "yRx")
+	{
+		cpp_dec_float_50 result = float_50_parser();
+		result = funTras->root_t(secondDigit, firstDigit);
+		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
+		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
+	}
+
+	// Se aplica el operador de raiz y√x
+	else if (operators == "x^y")
+	{
+		cpp_dec_float_50 result = float_50_parser();
+		result = funTras->power_t(firstDigit, secondDigit);
+		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
+		//txtDisplay->Text = System::Convert::ToString(result)->Replace(",", ".");
+	}
+
+	// Se aplica el operador de raiz y√x
+	else if (operators == "logy(x)")
+	{
+		//float x, long y
+		cpp_dec_float_50 result = float_50_parser();
+		result = funTras->log_t(firstDigit, secondDigit);
+		txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(result).c_str());
+	}
+
 	else {
-		//CAMBIAR ESTO POR UN ERROR DE VERDAD
-		txtDisplay->Text = "Esto no sirve :D";
+		//Si ocurre algun error inesperado
+		txtDisplay->Text = "ERROR";
 	}
 }
 private: System::Void botonMasMenos_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (txtDisplay->Text->Contains("-"))
+	if (entrada_acutal_x)
 	{
-		txtDisplay->Text = txtDisplay->Text->Remove(0, 1);
+		if (entradaX->Text->Contains("-"))
+		{
+			entradaX->Text = entradaX->Text->Remove(0, 1);
+		}
+		else
+		{
+			entradaX->Text = "-" + entradaX->Text;
+		}
 	}
-	else
+	else if (entrada_acutal_y)
 	{
-		txtDisplay->Text = "-" + txtDisplay->Text;
+		if (entradaY->Text->Contains("-"))
+		{
+			entradaY->Text = entradaY->Text->Remove(0, 1);
+		}
+		else
+		{
+			entradaY->Text = "-" + entradaY->Text;
+		}
 	}
 
 }
 
 private: System::Void botonBorrar_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (txtDisplay->Text->Length > 0)
+	/*if (txtDisplay->Text->Length > 0)
 	{
 		txtDisplay->Text = txtDisplay->Text->Remove(txtDisplay->Text->Length - 1, 1);
-	}
+	}*/
 
+	if (entrada_acutal_x)
+	{
+		if (entradaX->Text->Length > 0)
+		{
+			entradaX->Text = entradaX->Text->Remove(entradaX->Text->Length - 1, 1);
+		}
+	}
+	else if (entrada_acutal_y)
+	{
+		if (entradaY->Text->Length > 0)
+		{
+			entradaY->Text = entradaY->Text->Remove(entradaY->Text->Length - 1, 1);
+		}
+	}
 }
 
 
@@ -1073,13 +1142,23 @@ private: System::Void botonCE_Click(System::Object^ sender, System::EventArgs^ e
 	txtDisplay->Clear();
 	txtDisplay->Text = "0";
 
+	entradaX->Clear();
+	entradaX->Text = "0";
+
+	entradaY->Clear();
+	entradaY->Text = "0";
+
 }
 private: System::Void botonPI_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	txtDisplay->Text = ("3.14159265358979323846");
-	////////////////////////////
-	//UTILIZAR LA FUNCION get_pi
-	////////////////////////////
+	if (entrada_acutal_x)
+	{
+		entradaX->Text = pi_t.ToString()->Replace(",", ".");
+	}
+	else if (entrada_acutal_y)
+	{
+		entradaY->Text = pi_t.ToString()->Replace(",", ".");
+	}
 }
 //Funcion secante
 private: System::Void botonSec_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1110,6 +1189,7 @@ private: System::Void botonCsc_Click(System::Object^ sender, System::EventArgs^ 
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
+
 //Funcion uno dividido entre X
 private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1120,6 +1200,7 @@ private: System::Void boton_divi_t_Click(System::Object^ sender, System::EventAr
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
+
 //Funcion euler elevado a la X
 private: System::Void botonExp_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1165,17 +1246,6 @@ private: System::Void botonLn_Click(System::Object^ sender, System::EventArgs^ e
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
-	   //ESTA FUNCION TIENE PROBLEMAS
-private: System::Void botonLogYX_Click(System::Object^ sender, System::EventArgs^ e) {
-	cpp_dec_float_50 soloOperation_1 = float_50_parser();
-	//// Operación y asignación
-	soloOperation_1 = funTras->log_t(firstDigit, secondDigit);
-
-	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
-	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
-}
-
-
 
 private: System::Void botonSinh_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1209,11 +1279,6 @@ private: System::Void botonRaizX_Click(System::Object^ sender, System::EventArgs
 	//// Convertir de cpp_dec_float_50 a System::String y asignar al txtDisplay->Text
 	txtDisplay->Text = gcnew String(boost::lexical_cast<std::string>(soloOperation_1).c_str());
 }
-	   //FALTA ESTA FUNCION
-//private: System::Void botonYRaizX_Click(System::Object^ sender, System::EventArgs^ e) {
-//	//FALTA ESTA FUNCION
-//	//lblShowOp->Text = System::Convert::ToString(firstDigit) + " " + "√" + operators;
-//}
 
 private: System::Void botonArcoseno_Click(System::Object^ sender, System::EventArgs^ e) {
 	cpp_dec_float_50 soloOperation_1 = float_50_parser();
@@ -1251,20 +1316,20 @@ private: System::Void botonXfactorial_Click(System::Object^ sender, System::Even
 private: System::Void entradaActualX(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	entrada_acutal_x = true;
 	entrada_acutal_y = false;
-	if (entrada_acutal_x)
+	/*if (entrada_acutal_x)
 	{
 		entradaX->Text ="Actual";
 		entradaY->Text = "No";
-	}
+	}*/
 }
 private: System::Void entradaActualY(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	entrada_acutal_x = false;
 	entrada_acutal_y = true;
-	if (entrada_acutal_y)
+	/*if (entrada_acutal_y)
 	{
 		entradaX->Text = "No";
 		entradaY->Text = "Actual";
-	}
+	}*/
 }
 };
 }

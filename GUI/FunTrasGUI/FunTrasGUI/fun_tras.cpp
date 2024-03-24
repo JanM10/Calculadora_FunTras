@@ -188,7 +188,7 @@ cpp_dec_float_50 fun_tras::cot_t(cpp_dec_float_50 a) {
     return divi_t(tan_t(a));
 }
 
-cpp_dec_float_50 fun_tras::log_t(float x, long y) {
+cpp_dec_float_50 fun_tras::log_t(float x, float y) {
 
     return ln_t(x) / ln_t(y);
 }
